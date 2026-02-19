@@ -1,0 +1,215 @@
+---
+import BaseLayout from "@layouts/BaseLayout.astro";
+import ServiceCard from "@components/ServiceCard.astro";
+import { SITE } from "@utils/constants";
+---
+
+<BaseLayout
+  title="Services"
+  description="Strategic consulting, training, and advisory services for professionals and organizations looking to grow and transform."
+>
+  <section class="section" aria-labelledby="services-heading">
+    <div class="container">
+      <div class="services-header">
+        <h1 id="services-heading">Services</h1>
+        <p class="services-intro">
+          I offer tailored services designed to create lasting impact. Whether
+          you are an individual professional looking to level up or an
+          organization navigating complex challenges, I can help.
+        </p>
+      </div>
+
+      <div class="services-grid">
+        <ServiceCard
+          title="Strategic Consulting"
+          description="Navigate complex business and technology challenges with a clear, actionable strategy. I work with leadership teams to define vision, align priorities, and create roadmaps that deliver measurable results."
+          icon="🎯"
+          features={[
+            "Business & technology strategy",
+            "Digital transformation roadmaps",
+            "Organizational assessment",
+            "Stakeholder alignment workshops",
+          ]}
+        />
+
+        <ServiceCard
+          title="Training & Workshops"
+          description="Build capability within your team through hands-on, practical learning experiences. My training programs are designed to create lasting skills, not just temporary knowledge."
+          icon="🎓"
+          features={[
+            "Custom workshop design",
+            "Technical leadership training",
+            "Team effectiveness programs",
+            "Hands-on skill building",
+          ]}
+        />
+
+        <ServiceCard
+          title="Advisory Services"
+          description="Ongoing strategic guidance for professionals and leadership teams. Think of it as having a trusted advisor on speed dial — someone who understands your context and can provide timely, relevant counsel."
+          icon="🤝"
+          features={[
+            "Monthly advisory retainer",
+            "On-demand strategic counsel",
+            "Decision-making support",
+            "Career and leadership coaching",
+          ]}
+        />
+
+        <ServiceCard
+          title="Fractional Leadership"
+          description="Experienced leadership support without the full-time commitment. I embed with your team to provide hands-on guidance during critical growth phases, transitions, or transformations."
+          icon="⚡"
+          features={[
+            "Interim CTO / VP Engineering",
+            "Technical due diligence",
+            "Team scaling strategy",
+            "Process and culture building",
+          ]}
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- Process Section -->
+  <section class="section-sm process-section" aria-labelledby="process-heading">
+    <div class="container">
+      <h2 id="process-heading" class="section-heading">How I Work</h2>
+      <div class="process-grid">
+        <div class="process-step">
+          <span class="step-number" aria-hidden="true">01</span>
+          <h3>Discovery</h3>
+          <p>
+            We start with a conversation to understand your challenges, goals,
+            and context. No commitment — just a candid discussion.
+          </p>
+        </div>
+        <div class="process-step">
+          <span class="step-number" aria-hidden="true">02</span>
+          <h3>Proposal</h3>
+          <p>
+            Based on our discussion, I create a tailored proposal with clear
+            scope, deliverables, timeline, and investment.
+          </p>
+        </div>
+        <div class="process-step">
+          <span class="step-number" aria-hidden="true">03</span>
+          <h3>Execution</h3>
+          <p>
+            We work together to implement the plan, with regular check-ins and
+            transparent progress tracking.
+          </p>
+        </div>
+        <div class="process-step">
+          <span class="step-number" aria-hidden="true">04</span>
+          <h3>Impact</h3>
+          <p>
+            We measure results against our defined success criteria and ensure
+            the improvements are sustainable.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section cta-section" aria-labelledby="services-cta-heading">
+    <div class="container">
+      <div class="cta-content">
+        <h2 id="services-cta-heading">Ready to Get Started?</h2>
+        <p>
+          Every engagement begins with a free discovery conversation. Let's
+          discuss your challenges and explore how I can help.
+        </p>
+        <a href={`${SITE.base}/contact`} class="btn btn-primary">
+          Schedule a Conversation
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .services-header {
+    max-width: var(--content-width);
+    margin-bottom: var(--space-10);
+  }
+
+  .services-header h1 {
+    margin-bottom: var(--space-4);
+  }
+
+  .services-intro {
+    font-size: var(--text-lg);
+    color: var(--color-text-muted);
+    line-height: var(--leading-relaxed);
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 22rem), 1fr));
+    gap: var(--space-6);
+  }
+
+  /* Process Section */
+  .process-section {
+    background-color: var(--color-bg-alt);
+  }
+
+  .section-heading {
+    font-size: var(--text-3xl);
+    margin-bottom: var(--space-8);
+  }
+
+  .process-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 14rem), 1fr));
+    gap: var(--space-6);
+  }
+
+  .process-step {
+    padding: var(--space-6);
+  }
+
+  .step-number {
+    display: block;
+    font-size: var(--text-3xl);
+    font-weight: var(--weight-bold);
+    color: var(--color-primary);
+    opacity: 0.3;
+    margin-bottom: var(--space-3);
+  }
+
+  .process-step h3 {
+    font-size: var(--text-lg);
+    font-weight: var(--weight-semibold);
+    margin-bottom: var(--space-2);
+  }
+
+  .process-step p {
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+    line-height: var(--leading-relaxed);
+  }
+
+  /* CTA */
+  .cta-section {
+    text-align: center;
+  }
+
+  .cta-content {
+    max-width: 36rem;
+    margin-inline: auto;
+  }
+
+  .cta-content h2 {
+    font-size: var(--text-3xl);
+    margin-bottom: var(--space-4);
+  }
+
+  .cta-content p {
+    color: var(--color-text-muted);
+    font-size: var(--text-lg);
+    margin-bottom: var(--space-6);
+  }
+</style>

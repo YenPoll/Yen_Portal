@@ -1,0 +1,82 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  icon?: string;
+  features?: string[];
+}
+
+const { title, description, icon, features } = Astro.props;
+---
+
+<article class="service-card">
+  {icon && <span class="service-icon" aria-hidden="true">{icon}</span>}
+  <h3 class="service-title">{title}</h3>
+  <p class="service-description">{description}</p>
+  {
+    features && features.length > 0 && (
+      <ul class="service-features" role="list">
+        {features.map((feature) => (
+          <li>{feature}</li>
+        ))}
+      </ul>
+    )
+  }
+</article>
+
+<style>
+  .service-card {
+    padding: var(--space-8);
+    background-color: var(--color-surface);
+    border: var(--border-width) solid var(--color-border);
+    border-radius: var(--radius-lg);
+    transition: box-shadow var(--transition-base);
+  }
+
+  .service-card:hover {
+    box-shadow: var(--shadow-md);
+  }
+
+  .service-icon {
+    display: block;
+    font-size: 2rem;
+    margin-bottom: var(--space-4);
+  }
+
+  .service-title {
+    font-size: var(--text-xl);
+    font-weight: var(--weight-semibold);
+    margin-bottom: var(--space-3);
+  }
+
+  .service-description {
+    color: var(--color-text-muted);
+    font-size: var(--text-sm);
+    line-height: var(--leading-relaxed);
+    margin-bottom: var(--space-4);
+  }
+
+  .service-features {
+    list-style: none;
+    padding: 0;
+  }
+
+  .service-features li {
+    position: relative;
+    padding-left: var(--space-5);
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+  }
+
+  .service-features li + li {
+    margin-top: var(--space-2);
+  }
+
+  .service-features li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--color-success);
+    font-weight: var(--weight-bold);
+  }
+</style>

@@ -1,0 +1,77 @@
+---
+import BaseLayout from "@layouts/BaseLayout.astro";
+import Card from "@components/Card.astro";
+import { getCollection } from "astro:content";
+import { SITE } from "@utils/constants";
+
+const allCaseStudies = await getCollection("caseStudies");
+const caseStudies = allCaseStudies.sort(
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
+);
+---
+
+<BaseLayout
+  title="Case Studies"
+  description="Explore detailed case studies showcasing strategic consulting, digital transformation, and team performance projects with measurable outcomes."
+>
+  <section class="section" aria-labelledby="case-studies-heading">
+    <div class="container">
+      <div class="page-header">
+        <h1 id="case-studies-heading">Case Studies</h1>
+        <p class="page-intro">
+          Detailed breakdowns of real projects with measurable outcomes.
+          Each case study covers the challenge, approach, and results.
+        </p>
+      </div>
+
+      {
+        caseStudies.length > 0 ? (
+          <div class="card-grid">
+            {caseStudies.map((study) => (
+              <Card
+                title={study.data.title}
+                description={study.data.description}
+                href={`${SITE.base}/case-studies/${study.id}`}
+                date={study.data.date}
+                tags={study.data.tags}
+                image={study.data.image}
+              />
+            ))}
+          </div>
+        ) : (
+          <p class="empty-state">Case studies coming soon.</p>
+        )
+      }
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .page-header {
+    max-width: var(--content-width);
+    margin-bottom: var(--space-10);
+  }
+
+  .page-header h1 {
+    margin-bottom: var(--space-4);
+  }
+
+  .page-intro {
+    font-size: var(--text-lg);
+    color: var(--color-text-muted);
+    line-height: var(--leading-relaxed);
+  }
+
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 20rem), 1fr));
+    gap: var(--space-6);
+  }
+
+  .empty-state {
+    padding: var(--space-12);
+    text-align: center;
+    color: var(--color-text-muted);
+    font-size: var(--text-lg);
+  }
+</style>

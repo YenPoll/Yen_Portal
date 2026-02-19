@@ -1,0 +1,130 @@
+---
+import BaseLayout from "@layouts/BaseLayout.astro";
+import ContactForm from "@components/ContactForm.astro";
+import SocialLinks from "@components/SocialLinks.astro";
+---
+
+<BaseLayout
+  title="Contact"
+  description="Get in touch to discuss consulting, training, advisory services, or potential collaborations."
+>
+  <section class="section" aria-labelledby="contact-heading">
+    <div class="container">
+      <div class="contact-header">
+        <h1 id="contact-heading">Get in Touch</h1>
+        <p class="contact-intro">
+          I would love to hear from you. Whether you have a project in mind, a
+          question about my services, or just want to connect — reach out and
+          let's start a conversation.
+        </p>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-form-section">
+          <h2>Send a Message</h2>
+          <ContactForm />
+        </div>
+
+        <div class="contact-info-section">
+          <h2>Connect Directly</h2>
+          <p>
+            Prefer to reach out directly? You can find me on these platforms:
+          </p>
+          <SocialLinks />
+
+          <div class="response-info">
+            <h3>What to Expect</h3>
+            <ul>
+              <li>I typically respond within 1-2 business days</li>
+              <li>
+                For consulting inquiries, I will schedule a free 30-minute
+                discovery call
+              </li>
+              <li>
+                All conversations are confidential and no-obligation
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .contact-header {
+    max-width: var(--content-width);
+    margin-bottom: var(--space-10);
+  }
+
+  .contact-header h1 {
+    margin-bottom: var(--space-4);
+  }
+
+  .contact-intro {
+    font-size: var(--text-lg);
+    color: var(--color-text-muted);
+    line-height: var(--leading-relaxed);
+  }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-16);
+    align-items: start;
+  }
+
+  .contact-form-section h2,
+  .contact-info-section h2 {
+    font-size: var(--text-xl);
+    margin-bottom: var(--space-6);
+  }
+
+  .contact-info-section p {
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-6);
+  }
+
+  .response-info {
+    margin-top: var(--space-10);
+    padding: var(--space-6);
+    background-color: var(--color-bg-alt);
+    border-radius: var(--radius-lg);
+  }
+
+  .response-info h3 {
+    font-size: var(--text-base);
+    font-weight: var(--weight-semibold);
+    margin-bottom: var(--space-3);
+  }
+
+  .response-info ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .response-info li {
+    position: relative;
+    padding-left: var(--space-5);
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+  }
+
+  .response-info li + li {
+    margin-top: var(--space-2);
+  }
+
+  .response-info li::before {
+    content: "\2192";
+    position: absolute;
+    left: 0;
+    color: var(--color-primary);
+  }
+
+  @media (max-width: 768px) {
+    .contact-grid {
+      grid-template-columns: 1fr;
+      gap: var(--space-10);
+    }
+  }
+</style>

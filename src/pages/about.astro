@@ -1,0 +1,185 @@
+---
+import BaseLayout from "@layouts/BaseLayout.astro";
+import Seo from "@components/Seo.astro";
+import { SITE } from "@utils/constants";
+---
+
+<BaseLayout
+  title="About"
+  description="Learn about my professional background, expertise, and approach to strategic consulting and advisory services."
+>
+  <Seo
+    type="Person"
+    data={{
+      name: SITE.author,
+      url: `${SITE.url}/about`,
+      description:
+        "Strategic consultant and advisor helping professionals and companies grow.",
+      jobTitle: "Strategic Consultant & Advisor",
+    }}
+  />
+
+  <section class="section" aria-labelledby="about-heading">
+    <div class="container">
+      <div class="about-content prose">
+        <h1 id="about-heading">About Me</h1>
+
+        <div class="intro-block">
+          <p class="lead">
+            I am a strategic consultant and advisor with deep expertise in
+            technology, leadership, and organizational growth. I help
+            professionals and companies navigate complex challenges and turn them
+            into opportunities.
+          </p>
+        </div>
+
+        <h2>My Background</h2>
+        <p>
+          With years of experience spanning enterprise technology, team
+          leadership, and business strategy, I bring a unique combination of
+          technical depth and business acumen to every engagement. I have
+          worked with organizations of all sizes — from early-stage startups to
+          large enterprises — across industries including technology, finance,
+          healthcare, and professional services.
+        </p>
+
+        <p>
+          <em>
+            Replace this section with your actual professional background,
+            career highlights, and experience.
+          </em>
+        </p>
+
+        <h2>My Approach</h2>
+        <p>
+          I believe in a pragmatic, outcome-driven approach to consulting. Every
+          engagement starts with deep listening and understanding before jumping
+          to solutions. I focus on:
+        </p>
+        <ul>
+          <li>
+            <strong>Clarity</strong> — Cutting through complexity to find the
+            core issue
+          </li>
+          <li>
+            <strong>Measurable outcomes</strong> — Defining success criteria
+            upfront and tracking progress
+          </li>
+          <li>
+            <strong>Knowledge transfer</strong> — Building capability within
+            your team, not dependency on me
+          </li>
+          <li>
+            <strong>Long-term thinking</strong> — Quick wins today that align
+            with strategic goals tomorrow
+          </li>
+        </ul>
+
+        <h2>Areas of Expertise</h2>
+        <div class="skills-grid">
+          <div class="skill-category">
+            <h3>Strategy & Leadership</h3>
+            <ul>
+              <li>Digital Transformation</li>
+              <li>Technology Strategy</li>
+              <li>Organizational Design</li>
+              <li>Change Management</li>
+            </ul>
+          </div>
+          <div class="skill-category">
+            <h3>Technical Excellence</h3>
+            <ul>
+              <li>System Architecture</li>
+              <li>Engineering Best Practices</li>
+              <li>Cloud & Infrastructure</li>
+              <li>DevOps & Automation</li>
+            </ul>
+          </div>
+          <div class="skill-category">
+            <h3>People & Teams</h3>
+            <ul>
+              <li>Team Building & Scaling</li>
+              <li>Mentoring & Coaching</li>
+              <li>Training & Workshops</li>
+              <li>Stakeholder Management</li>
+            </ul>
+          </div>
+        </div>
+
+        <h2>Values</h2>
+        <p>
+          Everything I do is grounded in a few core values:
+        </p>
+        <ul>
+          <li>
+            <strong>Integrity</strong> — I will always give you my honest
+            assessment, even when it is not what you want to hear.
+          </li>
+          <li>
+            <strong>Impact</strong> — I measure success by the tangible outcomes
+            we achieve together.
+          </li>
+          <li>
+            <strong>Continuous learning</strong> — I invest heavily in staying
+            current and growing my expertise.
+          </li>
+          <li>
+            <strong>Generosity</strong> — I believe in sharing knowledge freely
+            and lifting others as I climb.
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .about-content {
+    margin-inline: auto;
+  }
+
+  .intro-block {
+    margin-bottom: var(--space-8);
+  }
+
+  .lead {
+    font-size: var(--text-xl);
+    color: var(--color-text);
+    line-height: var(--leading-relaxed);
+  }
+
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 16rem), 1fr));
+    gap: var(--space-6);
+    margin-top: var(--space-6);
+    margin-bottom: var(--space-6);
+  }
+
+  .skill-category {
+    padding: var(--space-5);
+    background-color: var(--color-bg-alt);
+    border-radius: var(--radius-lg);
+  }
+
+  .skill-category h3 {
+    font-size: var(--text-base);
+    font-weight: var(--weight-semibold);
+    margin-bottom: var(--space-3);
+  }
+
+  .skill-category ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .skill-category li {
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+    padding: var(--space-1) 0;
+  }
+
+  .skill-category li + li {
+    margin-top: 0;
+  }
+</style>

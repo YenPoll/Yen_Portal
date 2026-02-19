@@ -1,0 +1,28 @@
+---
+import MarkdownLayout from "@layouts/MarkdownLayout.astro";
+import { getCollection, render } from "astro:content";
+import { SITE } from "@utils/constants";
+
+export async function getStaticPaths() {
+  const caseStudies = await getCollection("caseStudies");
+  return caseStudies.map((study) => ({
+    params: { slug: study.id },
+    props: { entry: study },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+---
+
+<MarkdownLayout
+  title={entry.data.title}
+  description={entry.data.description}
+  date={entry.data.date}
+  tags={entry.data.tags}
+  image={entry.data.image}
+  backLink={{ href: `${SITE.base}/case-studies`, label: "Back to Case Studies" }}
+  body={entry.body ?? ""}
+>
+  <Content />
+</MarkdownLayout>

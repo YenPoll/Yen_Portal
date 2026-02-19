@@ -1,0 +1,139 @@
+---
+import { formatDate } from "@utils/helpers";
+
+interface Props {
+  title: string;
+  description: string;
+  href: string;
+  date?: Date | undefined;
+  tags?: string[] | undefined;
+  image?: string | undefined;
+}
+
+const { title, description, href, date, tags, image } = Astro.props;
+---
+
+<article class="card">
+  {
+    image && (
+      <a href={href} tabindex="-1" aria-hidden="true">
+        <img
+          src={image}
+          alt=""
+          class="card-image"
+          loading="lazy"
+          width="600"
+          height="340"
+        />
+      </a>
+    )
+  }
+  <div class="card-body">
+    {date && <time class="card-date" datetime={date.toISOString()}>{formatDate(date)}</time>}
+    <h3 class="card-title">
+      <a href={href}>{title}</a>
+    </h3>
+    <p class="card-description">{description}</p>
+    {
+      tags && tags.length > 0 && (
+        <div class="card-tags">
+          {tags.map((tag) => (
+            <span class="tag">{tag}</span>
+          ))}
+        </div>
+      )
+    }
+  </div>
+</article>
+
+<style>
+  .card {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--color-surface);
+    border: var(--border-width) solid var(--color-border);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    transition:
+      box-shadow var(--transition-base),
+      transform var(--transition-base);
+  }
+
+  .card:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .card:hover {
+      transform: none;
+    }
+  }
+
+  .card-image {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+  }
+
+  .card-body {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+    padding: var(--space-5);
+    flex: 1;
+  }
+
+  .card-date {
+    font-size: var(--text-xs);
+    color: var(--color-text-muted);
+  }
+
+  .card-title {
+    font-size: var(--text-lg);
+    font-weight: var(--weight-semibold);
+    line-height: var(--leading-tight);
+  }
+
+  .card-title a {
+    color: var(--color-text);
+    text-decoration: none;
+  }
+
+  .card-title a:hover {
+    color: var(--color-primary);
+  }
+
+  /* Make entire card clickable via title link */
+  .card-title a::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+  }
+
+  .card {
+    position: relative;
+  }
+
+  .card-description {
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+    line-height: var(--leading-normal);
+    /* Clamp to 3 lines */
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .card-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+    margin-top: var(--space-2);
+    /* Ensure tags are above the card link overlay */
+    position: relative;
+    z-index: 1;
+  }
+</style>

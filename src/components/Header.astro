@@ -1,0 +1,234 @@
+---
+import ThemeToggle from "@components/ThemeToggle.astro";
+import { NAV_LINKS, SITE } from "@utils/constants";
+
+const currentPath = Astro.url.pathname;
+
+function isActive(href: string): boolean {
+  // Exact match for home, startsWith for others
+  if (href === `${SITE.base}/`) {
+    return currentPath === `${SITE.base}/` || currentPath === SITE.base;
+  }
+  return currentPath.startsWith(href);
+}
+---
+
+<header class="site-header" transition:name="header" transition:persist>
+  <div class="container header-inner">
+    <a href={`${SITE.base}/`} class="site-logo" aria-label={`${SITE.title} — Home`}>
+      <span class="logo-mark">Y</span>
+      <span class="logo-text">{SITE.title}</span>
+    </a>
+
+    <nav aria-label="Main navigation" class="main-nav">
+      <button
+        type="button"
+        class="nav-toggle"
+        aria-expanded="false"
+        aria-controls="nav-menu"
+        aria-label="Toggle navigation menu"
+      >
+        <svg
+          class="hamburger-icon"
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          aria-hidden="true"
+        >
+          <line class="line-top" x1="3" y1="6" x2="21" y2="6"></line>
+          <line class="line-mid" x1="3" y1="12" x2="21" y2="12"></line>
+          <line class="line-bot" x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+
+      <ul id="nav-menu" class="nav-list" role="list">
+        {
+          NAV_LINKS.map((link) => (
+            <li>
+              <a
+                href={link.href}
+                class:list={["nav-link", { active: isActive(link.href) }]}
+                aria-current={isActive(link.href) ? "page" : undefined}
+              >
+                {link.label}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </nav>
+
+    <ThemeToggle />
+  </div>
+</header>
+
+<style>
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background-color: var(--color-bg);
+    border-bottom: var(--border-width) solid var(--color-border);
+  }
+
+  .header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-4);
+    height: 4rem;
+  }
+
+  /* Logo */
+  .site-logo {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    text-decoration: none;
+    color: var(--color-text);
+    font-weight: var(--weight-bold);
+    font-size: var(--text-lg);
+    flex-shrink: 0;
+  }
+
+  .site-logo:hover {
+    color: var(--color-primary);
+  }
+
+  .logo-mark {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+    background-color: var(--color-primary);
+    color: #ffffff;
+    font-weight: var(--weight-bold);
+    font-size: var(--text-sm);
+    border-radius: var(--radius-sm);
+  }
+
+  /* Navigation */
+  .main-nav {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    justify-content: flex-end;
+    margin-right: var(--space-4);
+  }
+
+  .nav-list {
+    display: flex;
+    align-items: center;
+    gap: var(--space-1);
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .nav-link {
+    display: block;
+    padding: var(--space-2) var(--space-3);
+    font-size: var(--text-sm);
+    font-weight: var(--weight-medium);
+    color: var(--color-text-muted);
+    text-decoration: none;
+    border-radius: var(--radius-md);
+    transition:
+      color var(--transition-fast),
+      background-color var(--transition-fast);
+  }
+
+  .nav-link:hover {
+    color: var(--color-text);
+    background-color: var(--color-bg-alt);
+  }
+
+  .nav-link.active {
+    color: var(--color-primary);
+    font-weight: var(--weight-semibold);
+  }
+
+  /* Mobile toggle */
+  .nav-toggle {
+    display: none;
+    padding: var(--space-2);
+    background: transparent;
+    border: none;
+    color: var(--color-text);
+    cursor: pointer;
+    border-radius: var(--radius-md);
+  }
+
+  .nav-toggle:hover {
+    background-color: var(--color-bg-alt);
+  }
+
+  /* Mobile styles */
+  @media (max-width: 768px) {
+    .nav-toggle {
+      display: flex;
+    }
+
+    .nav-list {
+      display: none;
+      position: absolute;
+      top: 4rem;
+      left: 0;
+      right: 0;
+      flex-direction: column;
+      gap: 0;
+      padding: var(--space-4) var(--gutter);
+      background-color: var(--color-bg);
+      border-bottom: var(--border-width) solid var(--color-border);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .nav-list.open {
+      display: flex;
+    }
+
+    .nav-link {
+      padding: var(--space-3) var(--space-4);
+      font-size: var(--text-base);
+      width: 100%;
+    }
+
+    .logo-text {
+      display: none;
+    }
+  }
+</style>
+
+<script is:inline>
+  (function () {
+    function attachMobileNav() {
+      var toggle = document.querySelector(".nav-toggle");
+      var menu = document.getElementById("nav-menu");
+      if (!toggle || !menu) return;
+
+      toggle.addEventListener("click", function () {
+        var expanded = toggle.getAttribute("aria-expanded") === "true";
+        toggle.setAttribute("aria-expanded", String(!expanded));
+        menu.classList.toggle("open");
+      });
+
+      // Close on Escape
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape" && menu.classList.contains("open")) {
+          toggle.setAttribute("aria-expanded", "false");
+          menu.classList.remove("open");
+          toggle.focus();
+        }
+      });
+    }
+    attachMobileNav();
+    document.addEventListener("astro:after-swap", attachMobileNav);
+  })();
+</script>

@@ -1,0 +1,78 @@
+---
+import BaseLayout from "@layouts/BaseLayout.astro";
+import Card from "@components/Card.astro";
+import { getCollection } from "astro:content";
+import { SITE } from "@utils/constants";
+
+const allWriting = await getCollection("writing");
+const posts = allWriting
+  .filter((post) => !post.data.draft)
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+---
+
+<BaseLayout
+  title="Writing"
+  description="Articles and insights on strategy, leadership, technology, and professional growth."
+>
+  <section class="section" aria-labelledby="writing-heading">
+    <div class="container">
+      <div class="page-header">
+        <h1 id="writing-heading">Writing</h1>
+        <p class="page-intro">
+          Insights and perspectives on strategy, leadership, technology, and
+          professional growth. Drawing from real-world experience to share
+          practical, actionable ideas.
+        </p>
+      </div>
+
+      {
+        posts.length > 0 ? (
+          <div class="card-grid">
+            {posts.map((post) => (
+              <Card
+                title={post.data.title}
+                description={post.data.description}
+                href={`${SITE.base}/writing/${post.id}`}
+                date={post.data.pubDate}
+                tags={post.data.tags}
+                image={post.data.image}
+              />
+            ))}
+          </div>
+        ) : (
+          <p class="empty-state">Articles coming soon.</p>
+        )
+      }
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .page-header {
+    max-width: var(--content-width);
+    margin-bottom: var(--space-10);
+  }
+
+  .page-header h1 {
+    margin-bottom: var(--space-4);
+  }
+
+  .page-intro {
+    font-size: var(--text-lg);
+    color: var(--color-text-muted);
+    line-height: var(--leading-relaxed);
+  }
+
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 20rem), 1fr));
+    gap: var(--space-6);
+  }
+
+  .empty-state {
+    padding: var(--space-12);
+    text-align: center;
+    color: var(--color-text-muted);
+    font-size: var(--text-lg);
+  }
+</style>

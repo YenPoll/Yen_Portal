@@ -1,0 +1,89 @@
+---
+interface Props {
+  title: string;
+  subtitle: string;
+  cta?: {
+    text: string;
+    href: string;
+  };
+  secondaryCta?: {
+    text: string;
+    href: string;
+  };
+}
+
+const { title, subtitle, cta, secondaryCta } = Astro.props;
+---
+
+<section class="hero section" aria-labelledby="hero-heading">
+  <div class="container">
+    <div class="hero-content">
+      <h1 id="hero-heading" class="hero-title" transition:name="hero-title">
+        {title}
+      </h1>
+      <p class="hero-subtitle">{subtitle}</p>
+      {
+        (cta || secondaryCta) && (
+          <div class="hero-actions">
+            {cta && (
+              <a href={cta.href} class="btn btn-primary">
+                {cta.text}
+              </a>
+            )}
+            {secondaryCta && (
+              <a href={secondaryCta.href} class="btn btn-outline">
+                {secondaryCta.text}
+              </a>
+            )}
+          </div>
+        )
+      }
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero {
+    padding-block: var(--space-20);
+  }
+
+  .hero-content {
+    max-width: 44rem;
+  }
+
+  .hero-title {
+    font-size: var(--text-4xl);
+    font-weight: var(--weight-bold);
+    line-height: var(--leading-tight);
+    margin-bottom: var(--space-6);
+  }
+
+  .hero-subtitle {
+    font-size: var(--text-xl);
+    color: var(--color-text-muted);
+    line-height: var(--leading-relaxed);
+    margin-bottom: var(--space-8);
+    max-width: 38rem;
+  }
+
+  .hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-4);
+  }
+
+  @media (max-width: 640px) {
+    .hero {
+      padding-block: var(--space-12);
+    }
+
+    .hero-actions {
+      flex-direction: column;
+    }
+
+    .hero-actions .btn {
+      width: 100%;
+      text-align: center;
+    }
+  }
+</style>

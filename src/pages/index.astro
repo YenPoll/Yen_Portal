@@ -1,0 +1,247 @@
+---
+import BaseLayout from "@layouts/BaseLayout.astro";
+import Hero from "@components/Hero.astro";
+import Card from "@components/Card.astro";
+import Seo from "@components/Seo.astro";
+import { getCollection } from "astro:content";
+import { SITE } from "@utils/constants";
+
+// Fetch featured case studies
+const allCaseStudies = await getCollection("caseStudies");
+const featuredCaseStudies = allCaseStudies
+  .filter((study) => study.data.featured)
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
+  .slice(0, 3);
+
+// Fetch latest writing (non-draft)
+const allWriting = await getCollection("writing");
+const latestWriting = allWriting
+  .filter((post) => !post.data.draft)
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+  .slice(0, 3);
+---
+
+<BaseLayout title={SITE.title} description={SITE.description}>
+  <Seo
+    type="WebSite"
+    data={{
+      name: SITE.title,
+      url: SITE.url,
+      description: SITE.description,
+      author: { "@type": "Person", name: SITE.author },
+    }}
+  />
+
+  <!-- Hero Section -->
+  <Hero
+    title="Strategic Expertise. Practical Results."
+    subtitle="I help professionals and companies grow through strategic advisory, training, and hands-on expertise. From digital transformation to team performance, I turn complex challenges into clear, actionable outcomes."
+    cta={{ text: "Work With Me", href: `${SITE.base}/contact` }}
+    secondaryCta={{ text: "View Case Studies", href: `${SITE.base}/case-studies` }}
+  />
+
+  <!-- Featured Work -->
+  {
+    featuredCaseStudies.length > 0 && (
+      <section class="section-sm" aria-labelledby="featured-heading">
+        <div class="container">
+          <h2 id="featured-heading" class="section-title">
+            Featured Work
+          </h2>
+          <p class="section-subtitle">
+            Selected projects showcasing measurable outcomes and strategic impact.
+          </p>
+          <div class="card-grid">
+            {featuredCaseStudies.map((study) => (
+              <Card
+                title={study.data.title}
+                description={study.data.description}
+                href={`${SITE.base}/case-studies/${study.id}`}
+                date={study.data.date}
+                tags={study.data.tags}
+                image={study.data.image}
+              />
+            ))}
+          </div>
+          <div class="section-cta">
+            <a href={`${SITE.base}/case-studies`} class="btn btn-outline">
+              View All Case Studies
+            </a>
+          </div>
+        </div>
+      </section>
+    )
+  }
+
+  <!-- Services Overview -->
+  <section class="section-sm services-overview" aria-labelledby="services-heading">
+    <div class="container">
+      <h2 id="services-heading" class="section-title">How I Can Help</h2>
+      <p class="section-subtitle">
+        Tailored services designed to create lasting impact for your career or
+        organization.
+      </p>
+      <div class="services-grid">
+        <div class="service-preview">
+          <span class="service-icon" aria-hidden="true">🎯</span>
+          <h3>Strategic Consulting</h3>
+          <p>
+            Navigate complex business and technology challenges with clarity and
+            confidence.
+          </p>
+        </div>
+        <div class="service-preview">
+          <span class="service-icon" aria-hidden="true">🎓</span>
+          <h3>Training & Workshops</h3>
+          <p>
+            Build capability within your team through hands-on, practical
+            training programs.
+          </p>
+        </div>
+        <div class="service-preview">
+          <span class="service-icon" aria-hidden="true">🤝</span>
+          <h3>Advisory Services</h3>
+          <p>
+            Ongoing guidance and thought partnership for professionals and
+            leadership teams.
+          </p>
+        </div>
+      </div>
+      <div class="section-cta">
+        <a href={`${SITE.base}/services`} class="btn btn-outline">
+          Explore Services
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Latest Writing -->
+  {
+    latestWriting.length > 0 && (
+      <section class="section-sm" aria-labelledby="writing-heading">
+        <div class="container">
+          <h2 id="writing-heading" class="section-title">
+            Latest Writing
+          </h2>
+          <p class="section-subtitle">
+            Insights and perspectives on strategy, leadership, and professional growth.
+          </p>
+          <div class="card-grid">
+            {latestWriting.map((post) => (
+              <Card
+                title={post.data.title}
+                description={post.data.description}
+                href={`${SITE.base}/writing/${post.id}`}
+                date={post.data.pubDate}
+                tags={post.data.tags}
+              />
+            ))}
+          </div>
+          <div class="section-cta">
+            <a href={`${SITE.base}/writing`} class="btn btn-outline">
+              Read More
+            </a>
+          </div>
+        </div>
+      </section>
+    )
+  }
+
+  <!-- CTA Section -->
+  <section class="section cta-section" aria-labelledby="cta-heading">
+    <div class="container">
+      <div class="cta-content">
+        <h2 id="cta-heading">Ready to Get Started?</h2>
+        <p>
+          Whether you need strategic guidance, hands-on training, or a trusted
+          advisor, I am here to help you achieve your goals.
+        </p>
+        <a href={`${SITE.base}/contact`} class="btn btn-primary">
+          Let&apos;s Talk
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .section-title {
+    font-size: var(--text-3xl);
+    margin-bottom: var(--space-3);
+  }
+
+  .section-subtitle {
+    color: var(--color-text-muted);
+    font-size: var(--text-lg);
+    max-width: 40rem;
+    margin-bottom: var(--space-8);
+  }
+
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 20rem), 1fr));
+    gap: var(--space-6);
+  }
+
+  .section-cta {
+    margin-top: var(--space-8);
+  }
+
+  /* Services overview */
+  .services-overview {
+    background-color: var(--color-bg-alt);
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 18rem), 1fr));
+    gap: var(--space-6);
+  }
+
+  .service-preview {
+    padding: var(--space-6);
+    background-color: var(--color-surface);
+    border: var(--border-width) solid var(--color-border);
+    border-radius: var(--radius-lg);
+  }
+
+  .service-preview .service-icon {
+    display: block;
+    font-size: 1.75rem;
+    margin-bottom: var(--space-3);
+  }
+
+  .service-preview h3 {
+    font-size: var(--text-lg);
+    font-weight: var(--weight-semibold);
+    margin-bottom: var(--space-2);
+  }
+
+  .service-preview p {
+    color: var(--color-text-muted);
+    font-size: var(--text-sm);
+    line-height: var(--leading-relaxed);
+  }
+
+  /* CTA Section */
+  .cta-section {
+    background-color: var(--color-bg-alt);
+    text-align: center;
+  }
+
+  .cta-content {
+    max-width: 36rem;
+    margin-inline: auto;
+  }
+
+  .cta-content h2 {
+    font-size: var(--text-3xl);
+    margin-bottom: var(--space-4);
+  }
+
+  .cta-content p {
+    color: var(--color-text-muted);
+    font-size: var(--text-lg);
+    margin-bottom: var(--space-6);
+  }
+</style>

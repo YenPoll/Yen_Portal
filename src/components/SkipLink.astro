@@ -1,0 +1,28 @@
+---
+// Accessible skip-to-content link — visible only on keyboard focus
+---
+
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<style>
+  .skip-link {
+    position: absolute;
+    top: -100%;
+    left: var(--space-4);
+    z-index: 9999;
+    padding: var(--space-3) var(--space-6);
+    font-weight: var(--weight-semibold);
+    font-size: var(--text-sm);
+    color: #ffffff;
+    background-color: var(--color-primary);
+    border-radius: var(--radius-md);
+    text-decoration: none;
+    transition: top var(--transition-fast);
+  }
+
+  .skip-link:focus-visible {
+    top: var(--space-4);
+    outline: 2px solid var(--color-focus);
+    outline-offset: 2px;
+  }
+</style>

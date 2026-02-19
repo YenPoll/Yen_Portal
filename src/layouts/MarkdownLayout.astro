@@ -1,0 +1,187 @@
+---
+import BaseLayout from "@layouts/BaseLayout.astro";
+import Seo from "@components/Seo.astro";
+import { formatDate, getReadingTime } from "@utils/helpers";
+import { SITE } from "@utils/constants";
+
+interface Props {
+  title: string;
+  description: string;
+  date: Date;
+  updatedDate?: Date | undefined;
+  tags?: string[] | undefined;
+  image?: string | undefined;
+  backLink?: { href: string; label: string } | undefined;
+  /** Raw body text for reading time calculation */
+  body?: string | undefined;
+}
+
+const {
+  title,
+  description,
+  date,
+  updatedDate,
+  tags,
+  image,
+  backLink,
+  body,
+} = Astro.props;
+
+const readingTime = body ? getReadingTime(body) : undefined;
+---
+
+<BaseLayout title={title} description={description} image={image} type="article">
+  <Seo
+    type="Article"
+    data={{
+      headline: title,
+      description,
+      datePublished: date.toISOString(),
+      dateModified: updatedDate ? updatedDate.toISOString() : date.toISOString(),
+      author: { "@type": "Person", name: SITE.author },
+      image: image ? new URL(image, SITE.url).toString() : undefined,
+    }}
+  />
+
+  <article class="section">
+    <div class="container">
+      <div class="article-content prose">
+        {
+          backLink && (
+            <nav class="back-nav" aria-label="Back navigation">
+              <a href={backLink.href} class="back-link">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <line x1="19" y1="12" x2="5" y2="12" />
+                  <polyline points="12 19 5 12 12 5" />
+                </svg>
+                {backLink.label}
+              </a>
+            </nav>
+          )
+        }
+
+        <header class="article-header">
+          <div class="article-meta">
+            <time datetime={date.toISOString()}>{formatDate(date)}</time>
+            {readingTime && <span class="meta-separator" aria-hidden="true">&middot;</span>}
+            {readingTime && <span>{readingTime}</span>}
+          </div>
+
+          <h1 transition:name={`title-${title}`}>{title}</h1>
+
+          {
+            updatedDate && (
+              <p class="updated-date">
+                Last updated: <time datetime={updatedDate.toISOString()}>{formatDate(updatedDate)}</time>
+              </p>
+            )
+          }
+
+          {
+            tags && tags.length > 0 && (
+              <div class="article-tags">
+                {tags.map((tag) => (
+                  <span class="tag">{tag}</span>
+                ))}
+              </div>
+            )
+          }
+        </header>
+
+        {
+          image && (
+            <img
+              src={image}
+              alt=""
+              class="article-hero-image"
+              width="1200"
+              height="630"
+              loading="eager"
+            />
+          )
+        }
+
+        <div class="article-body">
+          <slot />
+        </div>
+      </div>
+    </div>
+  </article>
+</BaseLayout>
+
+<style>
+  .article-content {
+    margin-inline: auto;
+  }
+
+  .back-nav {
+    margin-bottom: var(--space-8);
+  }
+
+  .back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+    text-decoration: none;
+    transition: color var(--transition-fast);
+  }
+
+  .back-link:hover {
+    color: var(--color-primary);
+  }
+
+  .article-header {
+    margin-bottom: var(--space-8);
+  }
+
+  .article-meta {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-4);
+  }
+
+  .article-header h1 {
+    margin-bottom: var(--space-4);
+  }
+
+  .updated-date {
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+    font-style: italic;
+    margin-bottom: var(--space-4);
+  }
+
+  .article-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+  }
+
+  .article-hero-image {
+    width: 100%;
+    height: auto;
+    border-radius: var(--radius-lg);
+    margin-bottom: var(--space-8);
+  }
+
+  .article-body {
+    font-size: var(--text-base);
+    line-height: var(--leading-relaxed);
+  }
+</style>

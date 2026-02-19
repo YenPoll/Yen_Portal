@@ -1,0 +1,97 @@
+---
+import { ClientRouter } from "astro:transitions";
+import { SITE } from "@utils/constants";
+import "@styles/global.css";
+
+interface Props {
+  title: string;
+  description: string;
+  image?: string | undefined;
+  type?: string | undefined;
+}
+
+const {
+  title,
+  description,
+  image = "/Yen_Portal/images/site/og-default.png",
+  type = "website",
+} = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const fullTitle = title === SITE.title ? title : `${title} | ${SITE.title}`;
+---
+
+<!-- Global Metadata -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="generator" content={Astro.generator} />
+
+<!-- Favicon -->
+<link rel="icon" type="image/svg+xml" href={`${SITE.base}/favicon.svg`} />
+
+<!-- Canonical URL -->
+<link rel="canonical" href={canonicalURL} />
+
+<!-- Primary Meta Tags -->
+<title>{fullTitle}</title>
+<meta name="title" content={fullTitle} />
+<meta name="description" content={description} />
+<meta name="author" content={SITE.author} />
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content={type} />
+<meta property="og:url" content={canonicalURL} />
+<meta property="og:title" content={fullTitle} />
+<meta property="og:description" content={description} />
+<meta property="og:image" content={new URL(image, Astro.site)} />
+<meta property="og:site_name" content={SITE.title} />
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:url" content={canonicalURL} />
+<meta property="twitter:title" content={fullTitle} />
+<meta property="twitter:description" content={description} />
+<meta property="twitter:image" content={new URL(image, Astro.site)} />
+
+<!-- Sitemap -->
+<link rel="sitemap" href={`${SITE.base}/sitemap-index.xml`} />
+
+<!-- View Transitions -->
+<ClientRouter />
+
+<!--
+  Theme detection script (is:inline to run before paint and prevent FOUC).
+  Checks localStorage first, falls back to system preference.
+-->
+<script is:inline>
+  (function () {
+    const theme = (() => {
+      const stored =
+        typeof localStorage !== "undefined"
+          ? localStorage.getItem("theme")
+          : null;
+      if (stored === "dark" || stored === "light") return stored;
+      return window.matchMedia("(prefers-color-scheme: dark)").matches
+        ? "dark"
+        : "light";
+    })();
+    document.documentElement.classList.toggle("dark", theme === "dark");
+  })();
+</script>
+
+<!-- Re-apply theme after View Transitions navigation -->
+<script is:inline>
+  document.addEventListener("astro:after-swap", function () {
+    const stored =
+      typeof localStorage !== "undefined"
+        ? localStorage.getItem("theme")
+        : null;
+    const theme =
+      stored === "dark" || stored === "light"
+        ? stored
+        : window.matchMedia("(prefers-color-scheme: dark)").matches
+          ? "dark"
+          : "light";
+    document.documentElement.classList.toggle("dark", theme === "dark");
+  });
+</script>
