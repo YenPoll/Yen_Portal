@@ -1,8 +1,8 @@
 export const SITE = {
-  title: "Yen Pollock",
+  title: "Yennyfer Pollock",
   description:
     "Global Business Operations & Market Enablement — Latin America & Caribbean. I help U.S.-based industrial, manufacturing, and technology companies grow international revenue, protect margins, and reduce operational cost.",
-  author: "Yen Pollock",
+  author: "Yennyfer Pollock",
   url: "https://YenPoll.github.io",
   base: "/Yen_Portal",
 } as const;
