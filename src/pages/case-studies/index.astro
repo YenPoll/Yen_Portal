@@ -11,16 +11,16 @@ const caseStudies = allCaseStudies.sort(
 ---
 
 <BaseLayout
-  title="Case Studies"
-  description="Explore detailed case studies showcasing strategic consulting, digital transformation, and team performance projects with measurable outcomes."
+  title="Experience"
+  description="Real project experience across PIM implementation, ERP transformation, channel operations, and LATAM market enablement — with measurable outcomes."
 >
   <section class="section" aria-labelledby="case-studies-heading">
     <div class="container">
       <div class="page-header">
-        <h1 id="case-studies-heading">Case Studies</h1>
+        <p class="page-eyebrow">Experience</p>
+        <h1 id="case-studies-heading">Project Experience</h1>
         <p class="page-intro">
-          Detailed breakdowns of real projects with measurable outcomes.
-          Each case study covers the challenge, approach, and results.
+          Real projects with documented scope, approach, and measurable outcomes. Each entry reflects direct execution responsibility — not advisory oversight.
         </p>
       </div>
 
@@ -50,6 +50,15 @@ const caseStudies = allCaseStudies.sort(
   .page-header {
     max-width: var(--content-width);
     margin-bottom: var(--space-10);
+  }
+
+  .page-eyebrow {
+    font-size: var(--text-sm);
+    font-weight: var(--weight-semibold);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-primary);
+    margin-bottom: var(--space-3);
   }
 
   .page-header h1 {

@@ -1,112 +1,133 @@
 ---
 import BaseLayout from "@layouts/BaseLayout.astro";
-import ServiceCard from "@components/ServiceCard.astro";
 import { SITE } from "@utils/constants";
 ---
 
 <BaseLayout
   title="Services"
-  description="Strategic consulting, training, and advisory services for professionals and organizations looking to grow and transform."
+  description="Global Business Operations & Market Enablement services — channel operations, sales enablement, ERP transformation, product marketing, and LATAM market expansion."
 >
   <section class="section" aria-labelledby="services-heading">
     <div class="container">
       <div class="services-header">
-        <h1 id="services-heading">Services</h1>
+        <p class="services-eyebrow">Services</p>
+        <h1 id="services-heading">What I Deliver</h1>
         <p class="services-intro">
-          I offer tailored services designed to create lasting impact. Whether
-          you are an individual professional looking to level up or an
-          organization navigating complex challenges, I can help.
+          I operate as the right arm to Sales and Sales Leadership — ensuring commercial strategy turns into disciplined execution across global channels, systems, and markets. Engagements are structured as strategic, fractional, or project-based.
         </p>
       </div>
 
       <div class="services-grid">
-        <ServiceCard
-          title="Strategic Consulting"
-          description="Navigate complex business and technology challenges with a clear, actionable strategy. I work with leadership teams to define vision, align priorities, and create roadmaps that deliver measurable results."
-          icon="🎯"
-          features={[
-            "Business & technology strategy",
-            "Digital transformation roadmaps",
-            "Organizational assessment",
-            "Stakeholder alignment workshops",
-          ]}
-        />
 
-        <ServiceCard
-          title="Training & Workshops"
-          description="Build capability within your team through hands-on, practical learning experiences. My training programs are designed to create lasting skills, not just temporary knowledge."
-          icon="🎓"
-          features={[
-            "Custom workshop design",
-            "Technical leadership training",
-            "Team effectiveness programs",
-            "Hands-on skill building",
-          ]}
-        />
+        <div class="service-card">
+          <h2>Global Channel & Distributor Operations</h2>
+          <p class="service-desc">
+            End-to-end management of international distributor relationships, compliance, and commercial performance. I build the operational infrastructure that ensures channel partners execute at the standards headquarters requires.
+          </p>
+          <ul class="service-features">
+            <li>Distributor onboarding, performance management, and compliance</li>
+            <li>Order management, logistics, and dropshipment coordination</li>
+            <li>Commercial escalation resolution — factory to market</li>
+            <li>Latin America & Caribbean channel development and expansion</li>
+          </ul>
+        </div>
 
-        <ServiceCard
-          title="Advisory Services"
-          description="Ongoing strategic guidance for professionals and leadership teams. Think of it as having a trusted advisor on speed dial — someone who understands your context and can provide timely, relevant counsel."
-          icon="🤝"
-          features={[
-            "Monthly advisory retainer",
-            "On-demand strategic counsel",
-            "Decision-making support",
-            "Career and leadership coaching",
-          ]}
-        />
+        <div class="service-card">
+          <h2>Sales Operations & Inside Sales Enablement</h2>
+          <p class="service-desc">
+            Execution support that lets field sales and leadership focus on revenue generation while operations remain controlled, accurate, and scalable.
+          </p>
+          <ul class="service-features">
+            <li>Complex deal and order management support</li>
+            <li>Pricing, commercial coordination, and quoting accuracy</li>
+            <li>CRM discipline, pipeline visibility, and forecasting support</li>
+            <li>KPI reporting and performance tracking for sales leadership</li>
+          </ul>
+        </div>
 
-        <ServiceCard
-          title="Fractional Leadership"
-          description="Experienced leadership support without the full-time commitment. I embed with your team to provide hands-on guidance during critical growth phases, transitions, or transformations."
-          icon="⚡"
-          features={[
-            "Interim CTO / VP Engineering",
-            "Technical due diligence",
-            "Team scaling strategy",
-            "Process and culture building",
-          ]}
-        />
+        <div class="service-card">
+          <h2>Enterprise Systems & ERP Transformation</h2>
+          <p class="service-desc">
+            I bridge the gap between IT business analysts and commercial teams — translating business requirements, driving user adoption, and ensuring ERP implementations deliver on their commercial promise.
+          </p>
+          <ul class="service-features">
+            <li>Business requirement translation across regions and languages</li>
+            <li>User adoption, training, and change management programs</li>
+            <li>Global process standardization and optimization</li>
+            <li>Reporting, data visibility, and dashboard design</li>
+          </ul>
+        </div>
+
+        <div class="service-card">
+          <h2>LATAM & Caribbean Market Enablement</h2>
+          <p class="service-desc">
+            Structured market entry and commercial execution for U.S.-based companies expanding into Latin America and Caribbean markets. First-mover advantage requires operational infrastructure from day one.
+          </p>
+          <ul class="service-features">
+            <li>Market entry strategy and distributor network development</li>
+            <li>Regulatory, cultural, and operational adaptation</li>
+            <li>Local execution with global discipline and reporting standards</li>
+            <li>Ongoing market management and relationship development</li>
+          </ul>
+        </div>
+
+        <div class="service-card">
+          <h2>Customer Advocacy & CX Operations</h2>
+          <p class="service-desc">
+            Customer advocacy embedded as an operational discipline — not a support function. I own escalation resolution, retention risk, and the customer experience that protects margin and long-term relationships.
+          </p>
+          <ul class="service-features">
+            <li>First-point escalation management between factory, sales, and market</li>
+            <li>Customer experience audits and improvement programs</li>
+            <li>Voice of customer to product, marketing, and operations</li>
+            <li>Retention-focused relationship management</li>
+          </ul>
+        </div>
+
+        <div class="service-card">
+          <h2>Product Marketing & Digital Execution</h2>
+          <p class="service-desc">
+            Global product content, landing page execution, and UX alignment across multi-language markets — ensuring customers find accurate, clear information that reduces friction and supports commercial conversion.
+          </p>
+          <ul class="service-features">
+            <li>Global and LATAM product portfolio content management</li>
+            <li>Digital product landing pages and UX alignment</li>
+            <li>Multi-language content accuracy and consistency</li>
+            <li>Product information management across markets</li>
+          </ul>
+        </div>
+
       </div>
     </div>
   </section>
 
-  <!-- Process Section -->
-  <section class="section-sm process-section" aria-labelledby="process-heading">
+  <!-- Engagement Model -->
+  <section class="section-sm engagement-section" aria-labelledby="engage-heading">
     <div class="container">
-      <h2 id="process-heading" class="section-heading">How I Work</h2>
-      <div class="process-grid">
-        <div class="process-step">
-          <span class="step-number" aria-hidden="true">01</span>
-          <h3>Discovery</h3>
-          <p>
-            We start with a conversation to understand your challenges, goals,
-            and context. No commitment — just a candid discussion.
-          </p>
+      <h2 id="engage-heading" class="section-heading">Engagement Model</h2>
+      <p class="section-body">
+        All engagements are fully remote, global-first, and structured to deliver measurable commercial outcomes. On-site travel is available when it delivers demonstrable ROI.
+      </p>
+      <div class="engage-grid">
+        <div class="engage-option">
+          <span class="engage-number">01</span>
+          <h3>Strategic Engagement</h3>
+          <p>Long-term embedded partnership with sales leadership and operations teams. Ongoing execution ownership with full accountability.</p>
         </div>
-        <div class="process-step">
-          <span class="step-number" aria-hidden="true">02</span>
-          <h3>Proposal</h3>
-          <p>
-            Based on our discussion, I create a tailored proposal with clear
-            scope, deliverables, timeline, and investment.
-          </p>
+        <div class="engage-option">
+          <span class="engage-number">02</span>
+          <h3>Fractional Leadership</h3>
+          <p>Part-time embedded operations leadership — ideal for companies needing senior execution capacity without a full-time hire.</p>
         </div>
-        <div class="process-step">
-          <span class="step-number" aria-hidden="true">03</span>
-          <h3>Execution</h3>
-          <p>
-            We work together to implement the plan, with regular check-ins and
-            transparent progress tracking.
-          </p>
+        <div class="engage-option">
+          <span class="engage-number">03</span>
+          <h3>Project-Based</h3>
+          <p>Defined scope, timeline, and deliverables. Suited for ERP implementations, market entry projects, and channel restructuring.</p>
         </div>
-        <div class="process-step">
-          <span class="step-number" aria-hidden="true">04</span>
-          <h3>Impact</h3>
-          <p>
-            We measure results against our defined success criteria and ensure
-            the improvements are sustainable.
-          </p>
+        <div class="engage-option">
+          <span class="engage-number">04</span>
+          <h3>Advisory</h3>
+          <p>Strategic guidance for leadership teams navigating international expansion, operational complexity, or systems transformation.</p>
         </div>
       </div>
     </div>
@@ -116,13 +137,12 @@ import { SITE } from "@utils/constants";
   <section class="section cta-section" aria-labelledby="services-cta-heading">
     <div class="container">
       <div class="cta-content">
-        <h2 id="services-cta-heading">Ready to Get Started?</h2>
+        <h2 id="services-cta-heading">Start With a Conversation</h2>
         <p>
-          Every engagement begins with a free discovery conversation. Let's
-          discuss your challenges and explore how I can help.
+          Every engagement begins with a discovery conversation to understand your markets, execution gaps, and commercial objectives. No commitment — just a candid discussion.
         </p>
         <a href={`${SITE.base}/contact`} class="btn btn-primary">
-          Schedule a Conversation
+          Schedule a Strategic Conversation
         </a>
       </div>
     </div>
@@ -131,11 +151,21 @@ import { SITE } from "@utils/constants";
 
 <style>
   .services-header {
-    max-width: var(--content-width);
-    margin-bottom: var(--space-10);
+    max-width: 52rem;
+    margin-bottom: var(--space-12);
+  }
+
+  .services-eyebrow {
+    font-size: var(--text-sm);
+    font-weight: var(--weight-semibold);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-primary);
+    margin-bottom: var(--space-3);
   }
 
   .services-header h1 {
+    font-size: var(--text-4xl);
     margin-bottom: var(--space-4);
   }
 
@@ -145,33 +175,89 @@ import { SITE } from "@utils/constants";
     line-height: var(--leading-relaxed);
   }
 
+  /* Services grid */
   .services-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(min(100%, 22rem), 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 28rem), 1fr));
     gap: var(--space-6);
   }
 
-  /* Process Section */
-  .process-section {
+  .service-card {
+    padding: var(--space-8);
+    background-color: var(--color-surface);
+    border: var(--border-width) solid var(--color-border);
+    border-radius: var(--radius-lg);
+  }
+
+  .service-card h2 {
+    font-size: var(--text-xl);
+    margin-bottom: var(--space-4);
+  }
+
+  .service-desc {
+    font-size: var(--text-base);
+    color: var(--color-text-muted);
+    line-height: var(--leading-relaxed);
+    margin-bottom: var(--space-5);
+  }
+
+  .service-features {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border-top: var(--border-width) solid var(--color-border);
+    padding-top: var(--space-5);
+  }
+
+  .service-features li {
+    position: relative;
+    padding-left: var(--space-5);
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+    line-height: var(--leading-relaxed);
+  }
+
+  .service-features li + li {
+    margin-top: var(--space-2);
+  }
+
+  .service-features li::before {
+    content: "—";
+    position: absolute;
+    left: 0;
+    color: var(--color-primary);
+    font-weight: var(--weight-bold);
+  }
+
+  /* Engagement section */
+  .engagement-section {
     background-color: var(--color-bg-alt);
   }
 
   .section-heading {
     font-size: var(--text-3xl);
+    margin-bottom: var(--space-4);
+  }
+
+  .section-body {
+    font-size: var(--text-lg);
+    color: var(--color-text-muted);
+    line-height: var(--leading-relaxed);
+    max-width: 48rem;
     margin-bottom: var(--space-8);
   }
 
-  .process-grid {
+  .engage-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(min(100%, 14rem), 1fr));
     gap: var(--space-6);
   }
 
-  .process-step {
+  .engage-option {
     padding: var(--space-6);
   }
 
-  .step-number {
+  .engage-number {
     display: block;
     font-size: var(--text-3xl);
     font-weight: var(--weight-bold);
@@ -180,13 +266,13 @@ import { SITE } from "@utils/constants";
     margin-bottom: var(--space-3);
   }
 
-  .process-step h3 {
-    font-size: var(--text-lg);
+  .engage-option h3 {
+    font-size: var(--text-base);
     font-weight: var(--weight-semibold);
     margin-bottom: var(--space-2);
   }
 
-  .process-step p {
+  .engage-option p {
     font-size: var(--text-sm);
     color: var(--color-text-muted);
     line-height: var(--leading-relaxed);
@@ -198,7 +284,7 @@ import { SITE } from "@utils/constants";
   }
 
   .cta-content {
-    max-width: 36rem;
+    max-width: 40rem;
     margin-inline: auto;
   }
 
@@ -210,6 +296,7 @@ import { SITE } from "@utils/constants";
   .cta-content p {
     color: var(--color-text-muted);
     font-size: var(--text-lg);
+    line-height: var(--leading-relaxed);
     margin-bottom: var(--space-6);
   }
 </style>

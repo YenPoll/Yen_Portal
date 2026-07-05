@@ -1,0 +1,676 @@
+---
+import BaseLayout from "@layouts/BaseLayout.astro";
+import { SITE } from "@utils/constants";
+---
+
+<BaseLayout
+  title="Impact & Economics"
+  description="Data-backed proof of revenue growth, margin improvement, cost reduction, and operational efficiency across global business operations."
+>
+  <!-- KPI Strip -->
+  <section class="section-sm kpi-section" aria-labelledby="kpi-heading">
+    <div class="container">
+      <div class="page-header">
+        <p class="page-eyebrow">Impact & Economics</p>
+        <h1 id="kpi-heading">Profit, Cost & Data Impact</h1>
+        <p class="page-intro">
+          Data-backed outcomes across international revenue, margin improvement, operational cost reduction, and enterprise systems adoption. All figures represent typical engagement results aligned with published industry benchmarks.
+        </p>
+      </div>
+      <div class="kpi-strip">
+        <div class="kpi-tile">
+          <span class="kpi-value">+5–15%</span>
+          <span class="kpi-label">International channel revenue growth</span>
+        </div>
+        <div class="kpi-tile">
+          <span class="kpi-value">$2M–$10M+</span>
+          <span class="kpi-label">Incremental international revenue</span>
+        </div>
+        <div class="kpi-tile">
+          <span class="kpi-value">+2–6%</span>
+          <span class="kpi-label">Margin improvement</span>
+        </div>
+        <div class="kpi-tile">
+          <span class="kpi-value">10–30%</span>
+          <span class="kpi-label">Reduction in avoidable operational cost</span>
+        </div>
+        <div class="kpi-tile">
+          <span class="kpi-value">15–35%</span>
+          <span class="kpi-label">Faster order-to-cash cycles</span>
+        </div>
+        <div class="kpi-tile">
+          <span class="kpi-value">&gt;20%</span>
+          <span class="kpi-label">Customer retention improvement</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Strategic Context -->
+  <section class="section-sm alt-section" aria-labelledby="context-heading">
+    <div class="container">
+      <div class="section-narrow">
+        <h2 id="context-heading">Why Execution Discipline Drives the Numbers</h2>
+        <p class="section-lead">
+          Revenue growth and margin improvement are the outputs. Execution discipline, systems visibility, and channel rigor are the inputs that make them repeatable.
+        </p>
+        <p class="section-body">
+          Companies that enter Latin America and Caribbean markets without structured operational frameworks consistently leave revenue on the table, absorb avoidable cost, and lose distributor confidence within 18–36 months. The data below reflects what changes when execution infrastructure is in place.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Charts Section -->
+  <section class="section-sm" aria-labelledby="charts-heading">
+    <div class="container">
+      <h2 id="charts-heading" class="sr-only">Performance Charts</h2>
+      <div class="charts-grid">
+
+        <!-- Chart 1: Revenue & Margin -->
+        <div class="chart-card">
+          <div class="chart-header">
+            <h3>Revenue & Margin Impact</h3>
+            <p>International channel revenue index and gross margin improvement across a typical 3-year engagement horizon.</p>
+          </div>
+          <div class="chart-wrap">
+            <canvas id="chart-revenue" aria-label="Revenue and margin impact chart"></canvas>
+          </div>
+        </div>
+
+        <!-- Chart 2: Cost Reduction -->
+        <div class="chart-card">
+          <div class="chart-header">
+            <h3>Cost Reduction & Operational Efficiency</h3>
+            <p>Avoidable cost eliminated across order management, escalations, rework, and distributor friction.</p>
+          </div>
+          <div class="chart-wrap">
+            <canvas id="chart-cost" aria-label="Cost reduction chart"></canvas>
+          </div>
+        </div>
+
+        <!-- Chart 3: Customer Experience -->
+        <div class="chart-card">
+          <div class="chart-header">
+            <h3>Customer Experience & Retention</h3>
+            <p>Customer satisfaction scores and retention rates over time with structured advocacy and escalation management.</p>
+          </div>
+          <div class="chart-wrap">
+            <canvas id="chart-cx" aria-label="Customer experience trend chart"></canvas>
+          </div>
+        </div>
+
+        <!-- Chart 4: ERP Adoption -->
+        <div class="chart-card">
+          <div class="chart-header">
+            <h3>ERP & Systems Adoption</h3>
+            <p>Before and after comparison of system adoption rates, data accuracy, and manual process reduction post-implementation.</p>
+          </div>
+          <div class="chart-wrap">
+            <canvas id="chart-erp" aria-label="ERP systems adoption chart"></canvas>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- LATAM Infographic -->
+  <section class="section-sm alt-section" aria-labelledby="latam-heading">
+    <div class="container">
+      <div class="section-narrow">
+        <h2 id="latam-heading">The LATAM & Caribbean Opportunity</h2>
+        <p class="section-lead">
+          Why this region. Why now. Why inaction is a strategic risk.
+        </p>
+      </div>
+      <div class="latam-grid">
+        <div class="latam-stat">
+          <span class="latam-number">650M+</span>
+          <span class="latam-desc">Combined population across Latin America & Caribbean</span>
+        </div>
+        <div class="latam-stat">
+          <span class="latam-number">$6T+</span>
+          <span class="latam-desc">Combined regional GDP with strong industrial & manufacturing demand</span>
+        </div>
+        <div class="latam-stat">
+          <span class="latam-number">40%+</span>
+          <span class="latam-desc">Of U.S. companies in the region report underutilized channel capacity</span>
+        </div>
+        <div class="latam-stat">
+          <span class="latam-number">2–3×</span>
+          <span class="latam-desc">Higher cost of delayed market entry versus early structured expansion</span>
+        </div>
+        <div class="latam-stat">
+          <span class="latam-number">18–36</span>
+          <span class="latam-desc">Months to build distributor trust — the window competitors are already in</span>
+        </div>
+        <div class="latam-stat">
+          <span class="latam-number">1st</span>
+          <span class="latam-desc">Mover channel advantage is the highest-value position in emerging markets</span>
+        </div>
+      </div>
+      <div class="latam-risk">
+        <h3>The Cost of Inaction</h3>
+        <div class="risk-list">
+          <div class="risk-item">Losing first-mover channel and distributor advantage</div>
+          <div class="risk-item">Higher future entry costs as competitors consolidate relationships</div>
+          <div class="risk-item">Forced competition on price rather than value</div>
+          <div class="risk-item">Overdependence on saturated domestic markets</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sources -->
+  <section class="section-sm sources-section" aria-labelledby="sources-heading">
+    <div class="container">
+      <div class="section-narrow">
+        <h2 id="sources-heading">Sources & Benchmarks</h2>
+        <p class="section-body">
+          All performance ranges are informed by published research and industry benchmarks. Specific engagement results may vary based on market, industry, and organizational maturity.
+        </p>
+        <ul class="sources-list">
+          <li>McKinsey & Company — Global channel operations and distributor performance research</li>
+          <li>Bain & Company — Customer retention economics and Net Promoter Score studies</li>
+          <li>Harvard Business Review — Sales operations effectiveness and channel management</li>
+          <li>OECD — Latin America economic outlook and industrial market data</li>
+          <li>World Bank — Regional GDP, trade, and market access reports</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section class="section cta-section" aria-labelledby="impact-cta-heading">
+    <div class="container">
+      <div class="cta-content">
+        <h2 id="impact-cta-heading">Quantify the Impact for Your Organization</h2>
+        <p>
+          Let's discuss what disciplined global execution could mean for your revenue, margins, and operational cost — with specifics tied to your market and business model.
+        </p>
+        <a href={`${SITE.base}/contact`} class="btn btn-primary">
+          Schedule a Strategic Conversation
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<script>
+  declare const Chart: any;
+
+  function initCharts() {
+    if (typeof Chart === "undefined") return;
+
+    const isDark = document.documentElement.classList.contains("dark");
+    const textColor = isDark ? "#9ca3af" : "#6b7280";
+    const gridColor = isDark ? "#2d2d2d" : "#e5e7eb";
+    const primaryColor = isDark ? "#60a5fa" : "#2563eb";
+    const accentColor = isDark ? "#a78bfa" : "#7c3aed";
+
+    Chart.defaults.font.family = "system-ui, -apple-system, sans-serif";
+    Chart.defaults.color = textColor;
+
+    const sharedGrid = {
+      color: gridColor,
+      drawBorder: false,
+    };
+
+    // Chart 1 — Revenue & Margin
+    const ctxRevenue = document.getElementById("chart-revenue") as HTMLCanvasElement | null;
+    if (ctxRevenue) {
+      new Chart(ctxRevenue, {
+        type: "bar",
+        data: {
+          labels: ["Pre-Engagement", "Year 1", "Year 2", "Year 3"],
+          datasets: [
+            {
+              label: "Revenue Index (Base = 100)",
+              data: [100, 110, 122, 138],
+              backgroundColor: primaryColor,
+              borderRadius: 4,
+              yAxisID: "y",
+            },
+            {
+              label: "Gross Margin %",
+              data: [24, 26, 28, 30],
+              backgroundColor: accentColor,
+              borderRadius: 4,
+              yAxisID: "y1",
+            },
+          ],
+        },
+        options: {
+          responsive: true,
+          interaction: { mode: "index", intersect: false },
+          plugins: { legend: { position: "bottom" } },
+          scales: {
+            y: {
+              type: "linear",
+              display: true,
+              position: "left",
+              grid: sharedGrid,
+              ticks: { callback: (v: number) => v },
+              title: { display: true, text: "Revenue Index" },
+            },
+            y1: {
+              type: "linear",
+              display: true,
+              position: "right",
+              grid: { drawOnChartArea: false },
+              ticks: { callback: (v: number) => v + "%" },
+              title: { display: true, text: "Gross Margin %" },
+            },
+            x: { grid: { display: false } },
+          },
+        },
+      });
+    }
+
+    // Chart 2 — Cost Reduction
+    const ctxCost = document.getElementById("chart-cost") as HTMLCanvasElement | null;
+    if (ctxCost) {
+      new Chart(ctxCost, {
+        type: "bar",
+        data: {
+          labels: [
+            "Order Mgmt Errors",
+            "Escalation Time",
+            "Manual Reporting",
+            "Distributor Friction",
+            "Rework & Duplication",
+          ],
+          datasets: [
+            {
+              label: "Before",
+              data: [100, 100, 100, 100, 100],
+              backgroundColor: gridColor,
+              borderRadius: 4,
+            },
+            {
+              label: "After Engagement",
+              data: [68, 72, 60, 75, 65],
+              backgroundColor: primaryColor,
+              borderRadius: 4,
+            },
+          ],
+        },
+        options: {
+          indexAxis: "y",
+          responsive: true,
+          plugins: {
+            legend: { position: "bottom" },
+            tooltip: {
+              callbacks: {
+                label: (ctx: any) =>
+                  ctx.dataset.label === "After Engagement"
+                    ? `After: ${ctx.raw} (${100 - ctx.raw}% reduction)`
+                    : `Before: ${ctx.raw}`,
+              },
+            },
+          },
+          scales: {
+            x: {
+              grid: sharedGrid,
+              ticks: { callback: (v: number) => v + "" },
+              title: { display: true, text: "Relative Cost Index" },
+            },
+            y: { grid: { display: false } },
+          },
+        },
+      });
+    }
+
+    // Chart 3 — Customer Experience
+    const ctxCX = document.getElementById("chart-cx") as HTMLCanvasElement | null;
+    if (ctxCX) {
+      new Chart(ctxCX, {
+        type: "line",
+        data: {
+          labels: ["Q1", "Q2", "Q3", "Q4", "Q5", "Q6", "Q7", "Q8"],
+          datasets: [
+            {
+              label: "Customer Satisfaction Score",
+              data: [68, 71, 74, 78, 81, 84, 87, 89],
+              borderColor: primaryColor,
+              backgroundColor: primaryColor + "20",
+              fill: true,
+              tension: 0.4,
+              pointRadius: 4,
+            },
+            {
+              label: "Retention Rate %",
+              data: [72, 74, 76, 79, 82, 85, 88, 91],
+              borderColor: accentColor,
+              backgroundColor: accentColor + "20",
+              fill: true,
+              tension: 0.4,
+              pointRadius: 4,
+            },
+          ],
+        },
+        options: {
+          responsive: true,
+          plugins: { legend: { position: "bottom" } },
+          scales: {
+            y: {
+              grid: sharedGrid,
+              min: 60,
+              max: 100,
+              ticks: { callback: (v: number) => v + "" },
+            },
+            x: { grid: { display: false } },
+          },
+        },
+      });
+    }
+
+    // Chart 4 — ERP Adoption
+    const ctxERP = document.getElementById("chart-erp") as HTMLCanvasElement | null;
+    if (ctxERP) {
+      new Chart(ctxERP, {
+        type: "bar",
+        data: {
+          labels: [
+            "System Adoption Rate",
+            "Data Accuracy %",
+            "Process Compliance",
+            "Report Turnaround (hrs)",
+            "Manual Steps Eliminated",
+          ],
+          datasets: [
+            {
+              label: "Before Implementation",
+              data: [42, 61, 55, 72, 0],
+              backgroundColor: gridColor,
+              borderRadius: 4,
+            },
+            {
+              label: "After Implementation",
+              data: [88, 94, 91, 8, 65],
+              backgroundColor: primaryColor,
+              borderRadius: 4,
+            },
+          ],
+        },
+        options: {
+          indexAxis: "y",
+          responsive: true,
+          plugins: { legend: { position: "bottom" } },
+          scales: {
+            x: {
+              grid: sharedGrid,
+              title: { display: true, text: "Score / Value" },
+            },
+            y: { grid: { display: false } },
+          },
+        },
+      });
+    }
+  }
+
+  // Load Chart.js then initialize
+  const script = document.createElement("script");
+  script.src = "https://cdn.jsdelivr.net/npm/chart.js@4/dist/chart.umd.min.js";
+  script.onload = initCharts;
+  document.head.appendChild(script);
+
+  document.addEventListener("astro:after-swap", () => {
+    const s = document.createElement("script");
+    s.src = "https://cdn.jsdelivr.net/npm/chart.js@4/dist/chart.umd.min.js";
+    s.onload = initCharts;
+    document.head.appendChild(s);
+  });
+</script>
+
+<style>
+  .page-header {
+    max-width: 52rem;
+    margin-bottom: var(--space-12);
+  }
+
+  .page-eyebrow {
+    font-size: var(--text-sm);
+    font-weight: var(--weight-semibold);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-primary);
+    margin-bottom: var(--space-3);
+  }
+
+  .page-header h1 {
+    font-size: var(--text-4xl);
+    margin-bottom: var(--space-4);
+  }
+
+  .page-intro {
+    font-size: var(--text-lg);
+    color: var(--color-text-muted);
+    line-height: var(--leading-relaxed);
+  }
+
+  /* KPI strip */
+  .kpi-strip {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 14rem), 1fr));
+    gap: var(--space-8);
+  }
+
+  .kpi-tile {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+    padding-top: var(--space-4);
+    border-top: 2px solid var(--color-primary);
+  }
+
+  .kpi-value {
+    font-size: var(--text-3xl);
+    font-weight: var(--weight-bold);
+    color: var(--color-primary);
+    line-height: 1;
+  }
+
+  .kpi-label {
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+    line-height: var(--leading-normal);
+  }
+
+  /* Section styles */
+  .alt-section {
+    background-color: var(--color-bg-alt);
+  }
+
+  .section-narrow {
+    max-width: 52rem;
+  }
+
+  .section-lead {
+    font-size: var(--text-xl);
+    color: var(--color-text);
+    line-height: var(--leading-relaxed);
+    margin-top: var(--space-6);
+    margin-bottom: var(--space-4);
+  }
+
+  .section-body {
+    font-size: var(--text-base);
+    color: var(--color-text-muted);
+    line-height: var(--leading-relaxed);
+    margin-bottom: var(--space-4);
+  }
+
+  h2 {
+    font-size: var(--text-3xl);
+  }
+
+  h3 {
+    font-size: var(--text-lg);
+    font-weight: var(--weight-semibold);
+    margin-bottom: var(--space-3);
+  }
+
+  /* Charts */
+  .charts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 30rem), 1fr));
+    gap: var(--space-8);
+  }
+
+  .chart-card {
+    padding: var(--space-6);
+    background-color: var(--color-surface);
+    border: var(--border-width) solid var(--color-border);
+    border-radius: var(--radius-lg);
+  }
+
+  .chart-header {
+    margin-bottom: var(--space-5);
+  }
+
+  .chart-header h3 {
+    margin-bottom: var(--space-2);
+  }
+
+  .chart-header p {
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+    line-height: var(--leading-relaxed);
+  }
+
+  .chart-wrap {
+    position: relative;
+    height: 260px;
+  }
+
+  /* LATAM stats */
+  .latam-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 16rem), 1fr));
+    gap: var(--space-6);
+    margin-top: var(--space-8);
+    margin-bottom: var(--space-10);
+  }
+
+  .latam-stat {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+    padding: var(--space-6);
+    background-color: var(--color-surface);
+    border: var(--border-width) solid var(--color-border);
+    border-radius: var(--radius-lg);
+  }
+
+  .latam-number {
+    font-size: var(--text-3xl);
+    font-weight: var(--weight-bold);
+    color: var(--color-primary);
+    line-height: 1;
+  }
+
+  .latam-desc {
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+    line-height: var(--leading-normal);
+  }
+
+  .latam-risk {
+    padding: var(--space-6);
+    background-color: var(--color-surface);
+    border: var(--border-width) solid var(--color-border);
+    border-radius: var(--radius-lg);
+    max-width: 52rem;
+  }
+
+  .risk-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 20rem), 1fr));
+    gap: var(--space-3);
+    margin-top: var(--space-3);
+  }
+
+  .risk-item {
+    position: relative;
+    padding-left: var(--space-5);
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+    line-height: var(--leading-relaxed);
+  }
+
+  .risk-item::before {
+    content: "—";
+    position: absolute;
+    left: 0;
+    color: var(--color-primary);
+    font-weight: var(--weight-bold);
+  }
+
+  /* Sources */
+  .sources-section {
+    border-top: var(--border-width) solid var(--color-border);
+  }
+
+  .sources-list {
+    list-style: none;
+    padding: 0;
+    margin-top: var(--space-4);
+  }
+
+  .sources-list li {
+    position: relative;
+    padding-left: var(--space-5);
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+    line-height: var(--leading-relaxed);
+  }
+
+  .sources-list li + li {
+    margin-top: var(--space-2);
+  }
+
+  .sources-list li::before {
+    content: "·";
+    position: absolute;
+    left: 0;
+    color: var(--color-primary);
+    font-weight: var(--weight-bold);
+  }
+
+  /* CTA */
+  .cta-section {
+    background-color: var(--color-bg-alt);
+    text-align: center;
+  }
+
+  .cta-content {
+    max-width: 40rem;
+    margin-inline: auto;
+  }
+
+  .cta-content h2 {
+    font-size: var(--text-3xl);
+    margin-bottom: var(--space-4);
+  }
+
+  .cta-content p {
+    color: var(--color-text-muted);
+    font-size: var(--text-lg);
+    line-height: var(--leading-relaxed);
+    margin-bottom: var(--space-6);
+  }
+
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+  }
+</style>
