@@ -17,6 +17,6 @@ export const NAV_LINKS = [
 ] as const;
 
 export const SOCIAL_LINKS = {
-  linkedin: "https://linkedin.com/in/YOUR_LINKEDIN",
+  linkedin: "https://www.linkedin.com/in/yennyfer-pollock",
   email: "mailto:yennyfer.pollock@outlook.com",
 } as const;
