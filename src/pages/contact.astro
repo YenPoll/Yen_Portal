@@ -2,21 +2,21 @@
 import BaseLayout from "@layouts/BaseLayout.astro";
 import ContactForm from "@components/ContactForm.astro";
 import SocialLinks from "@components/SocialLinks.astro";
+import PageHeader from "@components/PageHeader.astro";
 ---
 
 <BaseLayout
   title="Contact"
   description="Reach out about full-time opportunities in global business operations, LATAM market expansion, or channel and sales operations leadership."
 >
+  <PageHeader
+    id="contact-heading"
+    title="Let's Connect"
+    subtitle="I'm glad to start with a conversation — no pressure, just a chance to share your goals and see where this experience could add value."
+  />
+
   <section class="section" aria-labelledby="contact-heading">
     <div class="container">
-      <div class="contact-header">
-        <h1 id="contact-heading">Let's Connect</h1>
-        <p class="contact-intro">
-          I'm glad to start with a conversation — no pressure, just a chance to share your goals and see where this experience could add value.
-        </p>
-      </div>
-
       <div class="contact-grid">
         <div class="contact-form-section">
           <h2>Send a Message</h2>
@@ -45,21 +45,6 @@ import SocialLinks from "@components/SocialLinks.astro";
 </BaseLayout>
 
 <style>
-  .contact-header {
-    max-width: var(--content-width);
-    margin-bottom: var(--space-10);
-  }
-
-  .contact-header h1 {
-    margin-bottom: var(--space-4);
-  }
-
-  .contact-intro {
-    font-size: var(--text-lg);
-    color: var(--color-text-muted);
-    line-height: var(--leading-relaxed);
-  }
-
   .contact-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;

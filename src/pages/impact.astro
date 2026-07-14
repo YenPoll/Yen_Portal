@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "@layouts/BaseLayout.astro";
+import PageHeader from "@components/PageHeader.astro";
 import { SITE } from "@utils/constants";
 ---
 
@@ -7,16 +8,16 @@ import { SITE } from "@utils/constants";
   title="Impact & Economics"
   description="Data-backed proof of revenue growth, margin improvement, cost reduction, and operational efficiency across global business operations."
 >
+  <PageHeader
+    id="kpi-heading"
+    eyebrow="Impact & Economics"
+    title="Profit, Cost & Data Impact"
+    subtitle="Data-backed outcomes across international revenue, margin improvement, operational cost reduction, and enterprise systems adoption. All figures represent typical project results aligned with published industry benchmarks."
+  />
+
   <!-- KPI Strip -->
   <section class="section-sm kpi-section" aria-labelledby="kpi-heading">
     <div class="container">
-      <div class="page-header">
-        <p class="page-eyebrow">Impact & Economics</p>
-        <h1 id="kpi-heading">Profit, Cost & Data Impact</h1>
-        <p class="page-intro">
-          Data-backed outcomes across international revenue, margin improvement, operational cost reduction, and enterprise systems adoption. All figures represent typical project results aligned with published industry benchmarks.
-        </p>
-      </div>
       <div class="kpi-strip">
         <div class="kpi-tile">
           <span class="kpi-value">+5–15%</span>
@@ -401,7 +402,7 @@ import { SITE } from "@utils/constants";
           scales: {
             x: {
               grid: sharedGrid,
-              title: { display: true, text: "Score / Value" },
+              title: { display: true, text: "Score and value" },
             },
             y: { grid: { display: false } },
           },
@@ -425,31 +426,6 @@ import { SITE } from "@utils/constants";
 </script>
 
 <style>
-  .page-header {
-    max-width: 52rem;
-    margin-bottom: var(--space-12);
-  }
-
-  .page-eyebrow {
-    font-size: var(--text-sm);
-    font-weight: var(--weight-semibold);
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    color: var(--color-primary);
-    margin-bottom: var(--space-3);
-  }
-
-  .page-header h1 {
-    font-size: var(--text-4xl);
-    margin-bottom: var(--space-4);
-  }
-
-  .page-intro {
-    font-size: var(--text-lg);
-    color: var(--color-text-muted);
-    line-height: var(--leading-relaxed);
-  }
-
   /* KPI strip */
   .kpi-strip {
     display: grid;
