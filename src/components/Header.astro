@@ -17,12 +17,10 @@ function isActive(href: string): boolean {
   <div class="container header-inner">
     <a href={`${SITE.base}/`} class="site-logo" aria-label={`${SITE.title}, Home`}>
       <span class="logo-mark" aria-hidden="true">
-        <svg width="20" height="20" viewBox="0 0 32 32">
-          <path d="M8.5 7.5 L16 15.5 L23.5 7.5" stroke="#0B1F3A" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"></path>
-          <line x1="16" y1="15.5" x2="16" y2="21" stroke="#0B1F3A" stroke-width="3" stroke-linecap="round"></line>
-          <path d="M8.5 5.5 L10.5 7.5 L8.5 9.5 L6.5 7.5 Z" fill="#0B1F3A"></path>
-          <path d="M23.5 5.5 L25.5 7.5 L23.5 9.5 L21.5 7.5 Z" fill="#0B1F3A"></path>
-          <path d="M16 19.7 L19.7 23.9 L16 28.1 L12.3 23.9 Z" fill="#0B1F3A"></path>
+        <svg width="26" height="26" viewBox="0 0 32 32">
+          <path d="M6 6.5 L13 6.5 L16 15 Z" fill="#0B1F3A"></path>
+          <path d="M26 6.5 L19 6.5 L16 15 Z" fill="#0B1F3A"></path>
+          <path d="M16 15 L22 21 L16 27 L10 21 Z" fill="#0B1F3A"></path>
         </svg>
       </span>
       <span class="logo-text">{SITE.title}</span>
@@ -113,8 +111,8 @@ function isActive(href: string): boolean {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 2rem;
-    height: 2rem;
+    width: 2.5rem;
+    height: 2.5rem;
     background-color: #c89b3c;
     border-radius: var(--radius-sm);
     flex-shrink: 0;
