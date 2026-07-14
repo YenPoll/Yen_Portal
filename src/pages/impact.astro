@@ -14,7 +14,7 @@ import { SITE } from "@utils/constants";
         <p class="page-eyebrow">Impact & Economics</p>
         <h1 id="kpi-heading">Profit, Cost & Data Impact</h1>
         <p class="page-intro">
-          Data-backed outcomes across international revenue, margin improvement, operational cost reduction, and enterprise systems adoption. All figures represent typical engagement results aligned with published industry benchmarks.
+          Data-backed outcomes across international revenue, margin improvement, operational cost reduction, and enterprise systems adoption. All figures represent typical project results aligned with published industry benchmarks.
         </p>
       </div>
       <div class="kpi-strip">
@@ -71,7 +71,7 @@ import { SITE } from "@utils/constants";
         <div class="chart-card">
           <div class="chart-header">
             <h3>Revenue & Margin Impact</h3>
-            <p>International channel revenue index and gross margin improvement across a typical 3-year engagement horizon.</p>
+            <p>International channel revenue index and gross margin improvement across a typical 3-year tenure horizon.</p>
           </div>
           <div class="chart-wrap">
             <canvas id="chart-revenue" aria-label="Revenue and margin impact chart"></canvas>
@@ -168,7 +168,7 @@ import { SITE } from "@utils/constants";
       <div class="section-narrow">
         <h2 id="sources-heading">Sources & Benchmarks</h2>
         <p class="section-body">
-          All performance ranges are informed by published research and industry benchmarks. Specific engagement results may vary based on market, industry, and organizational maturity.
+          All performance ranges are informed by published research and industry benchmarks. Specific results may vary based on market, industry, and organizational maturity.
         </p>
         <ul class="sources-list">
           <li>McKinsey & Company — Global channel operations and distributor performance research</li>
@@ -190,7 +190,7 @@ import { SITE } from "@utils/constants";
           Let's discuss what disciplined global execution could mean for your revenue, margins, and operational cost — with specifics tied to your market and business model.
         </p>
         <a href={`${SITE.base}/contact`} class="btn btn-primary">
-          Schedule a Strategic Conversation
+          Let's Connect
         </a>
       </div>
     </div>
@@ -223,7 +223,7 @@ import { SITE } from "@utils/constants";
       new Chart(ctxRevenue, {
         type: "bar",
         data: {
-          labels: ["Pre-Engagement", "Year 1", "Year 2", "Year 3"],
+          labels: ["Year 0 (Baseline)", "Year 1", "Year 2", "Year 3"],
           datasets: [
             {
               label: "Revenue Index (Base = 100)",
@@ -289,7 +289,7 @@ import { SITE } from "@utils/constants";
               borderRadius: 4,
             },
             {
-              label: "After Engagement",
+              label: "After Implementation",
               data: [68, 72, 60, 75, 65],
               backgroundColor: primaryColor,
               borderRadius: 4,
@@ -304,7 +304,7 @@ import { SITE } from "@utils/constants";
             tooltip: {
               callbacks: {
                 label: (ctx: any) =>
-                  ctx.dataset.label === "After Engagement"
+                  ctx.dataset.label === "After Implementation"
                     ? `After: ${ctx.raw} (${100 - ctx.raw}% reduction)`
                     : `Before: ${ctx.raw}`,
               },
