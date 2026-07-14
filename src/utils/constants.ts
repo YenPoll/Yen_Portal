@@ -1,7 +1,7 @@
 export const SITE = {
   title: "Yennyfer Pollock",
   description:
-    "Global Business Operations & Market Enablement — Latin America & Caribbean. I help industrial, manufacturing, and technology companies grow international revenue, protect margins, and reduce operational cost.",
+    "Global Business Operations & Market Enablement: Latin America & Caribbean. I help industrial, manufacturing, and technology companies grow international revenue, protect margins, and reduce operational cost.",
   author: "Yennyfer Pollock",
   url: "https://YenPoll.github.io",
   base: "/Yen_Portal",

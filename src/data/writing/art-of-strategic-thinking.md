@@ -10,7 +10,7 @@ draft: false
 
 In my years of working with technology leaders, I have noticed a common pattern: the most effective professionals are not necessarily the ones with the deepest technical skills. They are the ones who can connect technical decisions to business outcomes.
 
-Strategic thinking is a learnable skill. It requires practice, intentionality, and a willingness to zoom out from the day-to-day.
+Strategic thinking is a learnable skill. It requires practice, intentionality, and a willingness to zoom out from the day to day.
 
 ## A Framework for Strategic Thinking
 
@@ -35,7 +35,7 @@ Not all problems are equal. Find the points where small changes create outsized 
 
 ### 3. Make Reversible Bets
 
-In uncertain environments, prefer decisions that are easy to reverse. Save your "one-way doors" for decisions where the evidence is strong.
+In uncertain environments, prefer decisions that are easy to reverse. Save your "one way doors" for decisions where the evidence is strong.
 
 ### 4. Communicate the Why
 
@@ -45,4 +45,4 @@ A strategy that no one understands is not a strategy. Invest time in communicati
 
 Start small. In your next project or decision, try applying this framework. Write down your thinking. Share it with a trusted colleague for feedback.
 
-Strategic thinking is not about having all the answers — it is about asking better questions and being intentional about where you invest your time and energy.
+Strategic thinking is not about having all the answers, it is about asking better questions and being intentional about where you invest your time and energy.

@@ -1,6 +1,6 @@
 ---
 title: "Five Lessons from Five Years of Consulting"
-description: "Reflecting on the most valuable lessons learned from working with diverse clients across industries — insights that apply whether you are a consultant or not."
+description: "Reflecting on the most valuable lessons learned from working with diverse clients across industries, insights that apply whether you are a consultant or not."
 pubDate: 2024-06-15
 tags: ["Consulting", "Career", "Lessons Learned"]
 draft: false
@@ -8,7 +8,7 @@ draft: false
 
 ## Lessons That Shaped My Practice
 
-After five years of consulting with organizations of all sizes, certain patterns and lessons have emerged repeatedly. These are not theoretical — they are battle-tested insights from real engagements.
+After five years of consulting with organizations of all sizes, certain patterns and lessons have emerged repeatedly. These are not theoretical, they are battle tested insights from real engagements.
 
 ## 1. Listen Before You Solve
 
