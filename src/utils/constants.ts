@@ -12,6 +12,7 @@ export const NAV_LINKS = [
   { label: "About", href: `${SITE.base}/about` },
   { label: "Core Expertise", href: `${SITE.base}/services` },
   { label: "Experience", href: `${SITE.base}/case-studies` },
+  { label: "AI Partnership", href: `${SITE.base}/ai-partnership` },
   { label: "Impact & Economics", href: `${SITE.base}/impact` },
   { label: "Contact", href: `${SITE.base}/contact` },
 ] as const;
