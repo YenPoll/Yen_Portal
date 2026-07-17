@@ -1,10 +1,36 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 300" width="640" height="300" role="img" aria-label="AI vs Human: Decision Framework — asset pending">
-  <rect width="640" height="300" fill="#374151" rx="8"/>
-  <rect x="1" y="1" width="638" height="298" fill="none" stroke="#6b7280" stroke-width="1.5" stroke-dasharray="6,4" rx="7"/>
-  <rect x="296" y="70" width="48" height="48" rx="6" fill="#4b5563"/>
-  <line x1="310" y1="94" x2="332" y2="94" stroke="#9ca3af" stroke-width="2" stroke-linecap="round"/>
-  <line x1="310" y1="100" x2="326" y2="100" stroke="#9ca3af" stroke-width="2" stroke-linecap="round"/>
-  <line x1="310" y1="106" x2="329" y2="106" stroke="#9ca3af" stroke-width="2" stroke-linecap="round"/>
-  <text x="320" y="148" font-family="system-ui,-apple-system,sans-serif" font-size="13" fill="#e5e7eb" text-anchor="middle" font-weight="600">AI vs Human: Decision Framework</text>
-  <text x="320" y="170" font-family="system-ui,-apple-system,sans-serif" font-size="11" fill="#9ca3af" text-anchor="middle">Visual asset — replace with your SVG file</text>
+<svg width="680" height="470" viewBox="0 0 680 470" xmlns="http://www.w3.org/2000/svg" role="img">
+<title>Framework comparing what AI does versus what the human decision-maker does, with cited source</title>
+<desc>A two-column comparison: AI accelerates information and analysis, while the human retains judgment, accountability, and the final call. Includes a cited statistic from Deloitte's 2026 Global Human Capital Trends report.</desc>
+<rect x="0" y="0" width="680" height="470" fill="#0F0F0F"/>
+
+<text x="40" y="34" font-family="Arial, sans-serif" font-size="12" fill="#9CA3AF">"60% of executives now regularly use AI to support their decisions."</text>
+<text x="40" y="52" font-family="Arial, sans-serif" font-size="11" fill="#6B7280">Source: Deloitte Insights, 2026 Global Human Capital Trends</text>
+
+<rect x="40" y="72" width="290" height="360" rx="10" fill="#1A1A1A" stroke="#2D2D2D" stroke-width="0.75"/>
+<text x="60" y="101" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#7FA8D9">What AI does</text>
+
+<g font-family="Arial, sans-serif" font-size="13" fill="#E5E5E5">
+<circle cx="66" cy="147" r="3" fill="#7FA8D9"/><text x="78" y="152">Scans data for patterns</text>
+<circle cx="66" cy="179" r="3" fill="#7FA8D9"/><text x="78" y="184">Models scenarios fast</text>
+<circle cx="66" cy="211" r="3" fill="#7FA8D9"/><text x="78" y="216">Flags anomalies early</text>
+<circle cx="66" cy="243" r="3" fill="#7FA8D9"/><text x="78" y="248">Drafts reports, dashboards</text>
+<circle cx="66" cy="275" r="3" fill="#7FA8D9"/><text x="78" y="280">Surfaces options, fast</text>
+</g>
+<text x="60" y="337" font-family="Arial, sans-serif" font-size="12" fill="#9CA3AF">Speed and scale</text>
+<text x="60" y="359" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#7FA8D9">Minutes, not hours</text>
+
+<rect x="350" y="72" width="290" height="360" rx="10" fill="#1A1A1A" stroke="#B8923F" stroke-width="1.25"/>
+<text x="370" y="101" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#C89B3C">What I decide</text>
+
+<g font-family="Arial, sans-serif" font-size="13" fill="#E5E5E5">
+<circle cx="376" cy="147" r="3" fill="#C89B3C"/><text x="388" y="152">Which option to pursue</text>
+<circle cx="376" cy="179" r="3" fill="#C89B3C"/><text x="388" y="184">What risk is worth taking</text>
+<circle cx="376" cy="211" r="3" fill="#C89B3C"/><text x="388" y="216">How to handle the person, not just the number</text>
+<circle cx="376" cy="243" r="3" fill="#C89B3C"/><text x="388" y="248">When to override the model</text>
+<circle cx="376" cy="275" r="3" fill="#C89B3C"/><text x="388" y="280">Who's accountable for the outcome</text>
+</g>
+<text x="370" y="337" font-family="Arial, sans-serif" font-size="12" fill="#9CA3AF">Judgment and accountability</text>
+<text x="370" y="359" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#C89B3C">Always human</text>
+
+<text x="340" y="452" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#9CA3AF">AI accelerates the information. The decision stays mine.</text>
 </svg>
