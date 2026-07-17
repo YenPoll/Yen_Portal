@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "@layouts/BaseLayout.astro";
+import PageHeader from "@components/PageHeader.astro";
 import { SITE } from "@utils/constants";
 ---
 
@@ -7,16 +8,12 @@ import { SITE } from "@utils/constants";
   title="AI Partnership"
   description="A strategic collaboration between AI tools and operational expertise — integrating intelligent automation into real workflows to scale execution faster, without handing over the judgment."
 >
-  <!-- Page Header -->
-  <section class="ai-header" aria-labelledby="ai-heading">
-    <div class="container">
-      <p class="ai-eyebrow">AI Partnership</p>
-      <h1 id="ai-heading">Strategic AI Integration</h1>
-      <p class="ai-intro">
-        A strategic collaboration between AI tools and my own skills, knowledge, and experience — built to integrate intelligent automation into real operational workflows and scale execution faster, without ever handing over the judgment.
-      </p>
-    </div>
-  </section>
+  <PageHeader
+    id="ai-heading"
+    eyebrow="AI Partnership"
+    title="Strategic AI Integration"
+    subtitle="A strategic collaboration between AI tools and my own skills, knowledge, and experience — built to integrate intelligent automation into real operational workflows and scale execution faster, without ever handing over the judgment."
+  />
 
   <!-- Why I Work This Way -->
   <section class="ai-section" aria-labelledby="why-heading">
@@ -284,37 +281,6 @@ import { SITE } from "@utils/constants";
 </BaseLayout>
 
 <style>
-  /* ── Page Header ── */
-  .ai-header {
-    padding-block: var(--space-20);
-    background-color: var(--color-bg-alt);
-    border-bottom: var(--border-width) solid var(--color-border);
-  }
-
-  .ai-eyebrow {
-    font-size: var(--text-sm);
-    font-weight: var(--weight-semibold);
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    color: #c89b3c;
-    margin-bottom: var(--space-4);
-  }
-
-  .ai-header h1 {
-    font-size: var(--text-4xl);
-    font-weight: var(--weight-bold);
-    line-height: var(--leading-tight);
-    margin-bottom: var(--space-6);
-  }
-
-  .ai-intro {
-    font-size: var(--text-xl);
-    color: var(--color-text-muted);
-    line-height: var(--leading-relaxed);
-    max-width: 48rem;
-    font-style: italic;
-  }
-
   /* ── Sections ── */
   .ai-section {
     padding-block: var(--space-12);
