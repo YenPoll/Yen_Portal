@@ -1,10 +1,34 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 300" width="640" height="300" role="img" aria-label="AI vs Human: Project Management Framework — asset pending">
-  <rect width="640" height="300" fill="#374151" rx="8"/>
-  <rect x="1" y="1" width="638" height="298" fill="none" stroke="#6b7280" stroke-width="1.5" stroke-dasharray="6,4" rx="7"/>
-  <rect x="296" y="70" width="48" height="48" rx="6" fill="#4b5563"/>
-  <line x1="310" y1="94" x2="332" y2="94" stroke="#9ca3af" stroke-width="2" stroke-linecap="round"/>
-  <line x1="310" y1="100" x2="326" y2="100" stroke="#9ca3af" stroke-width="2" stroke-linecap="round"/>
-  <line x1="310" y1="106" x2="329" y2="106" stroke="#9ca3af" stroke-width="2" stroke-linecap="round"/>
-  <text x="320" y="148" font-family="system-ui,-apple-system,sans-serif" font-size="13" fill="#e5e7eb" text-anchor="middle" font-weight="600">AI vs Human: Project Management Framework</text>
-  <text x="320" y="170" font-family="system-ui,-apple-system,sans-serif" font-size="11" fill="#9ca3af" text-anchor="middle">Visual asset — replace with your SVG file</text>
+<svg width="680" height="470" viewBox="0 0 680 470" xmlns="http://www.w3.org/2000/svg" role="img">
+<title>Framework comparing what AI does versus what the project manager decides</title>
+<desc>A two-column comparison for project management: AI accelerates reporting and risk detection, while the project manager retains judgment on scope, escalation, and accountability. Includes a cited statistic from PMI.</desc>
+<rect x="0" y="0" width="680" height="470" fill="#0F0F0F"/>
+
+<text x="40" y="34" font-family="Arial, sans-serif" font-size="12" fill="#9CA3AF">"Only 20% of PMs report extensive AI experience; 49% have little to no understanding of AI in PM."</text>
+<text x="40" y="52" font-family="Arial, sans-serif" font-size="11" fill="#6B7280">Source: PMI, Shaping the Future of Project Management With AI</text>
+
+<rect x="40" y="72" width="290" height="360" rx="10" fill="#1A1A1A" stroke="#2D2D2D" stroke-width="0.75"/>
+<text x="60" y="101" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#7FA8D9">What AI does</text>
+<g font-family="Arial, sans-serif" font-size="13" fill="#E5E5E5">
+<circle cx="66" cy="147" r="3" fill="#7FA8D9"/><text x="78" y="152">Automates status reporting</text>
+<circle cx="66" cy="179" r="3" fill="#7FA8D9"/><text x="78" y="184">Flags schedule and budget risk</text>
+<circle cx="66" cy="211" r="3" fill="#7FA8D9"/><text x="78" y="216">Normalizes updates across tools</text>
+<circle cx="66" cy="243" r="3" fill="#7FA8D9"/><text x="78" y="248">Predicts resource bottlenecks</text>
+<circle cx="66" cy="275" r="3" fill="#7FA8D9"/><text x="78" y="280">Drafts stakeholder summaries</text>
+</g>
+<text x="60" y="337" font-family="Arial, sans-serif" font-size="12" fill="#9CA3AF">Impact</text>
+<text x="60" y="359" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#7FA8D9">Hours saved weekly</text>
+
+<rect x="350" y="72" width="290" height="360" rx="10" fill="#1A1A1A" stroke="#B8923F" stroke-width="1.25"/>
+<text x="370" y="101" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#C89B3C">What I decide</text>
+<g font-family="Arial, sans-serif" font-size="13" fill="#E5E5E5">
+<circle cx="376" cy="147" r="3" fill="#C89B3C"/><text x="388" y="152">Which risk to escalate, and when</text>
+<circle cx="376" cy="179" r="3" fill="#C89B3C"/><text x="388" y="184">How to renegotiate scope</text>
+<circle cx="376" cy="211" r="3" fill="#C89B3C"/><text x="388" y="216">When to override the plan</text>
+<circle cx="376" cy="243" r="3" fill="#C89B3C"/><text x="388" y="248">How to align stakeholders in conflict</text>
+<circle cx="376" cy="275" r="3" fill="#C89B3C"/><text x="388" y="280">Who owns the outcome</text>
+</g>
+<text x="370" y="337" font-family="Arial, sans-serif" font-size="12" fill="#9CA3AF">Impact</text>
+<text x="370" y="359" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#C89B3C">Trust and delivery</text>
+
+<text x="340" y="452" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#9CA3AF">AI clears the noise. I still run the project.</text>
 </svg>
