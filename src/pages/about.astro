@@ -28,19 +28,35 @@ import { SITE } from "@utils/constants";
     subtitle="I am a Global Business Operations & Market Enablement leader specializing in Latin America and Caribbean markets, with deep experience across industrial, manufacturing, and technology sectors. I serve as the strategic and operational bridge between headquarters, sales leadership, and international channels, bringing enterprise grade accountability to every market I support."
   />
 
+  <!-- Photo + intro -->
+  <section class="about-intro-section">
+    <div class="container">
+      <div class="about-intro-grid">
+        <div class="about-photo-col">
+          <img
+            src={`${SITE.base}/assets/profile.jpg`}
+            alt="Yennyfer Pollock — Global Business Operations & Market Enablement Leader"
+            class="about-photo"
+            loading="eager"
+            width="380"
+            height="460"
+          />
+        </div>
+        <div class="about-intro-col">
+          <p class="about-intro-lead">
+            My career has been built at the intersection of sales operations, channel management, enterprise systems, and international market development. I have operated across complex, multi-region environments, managing distributor relationships, driving ERP implementations, supporting sales leadership, and building the operational infrastructure that allows global commercial strategies to execute with precision.
+          </p>
+          <p class="about-intro-lead">
+            At Wacker Neuson, I served as Product Marketing Manager with responsibility for global product landing pages, multi-language digital content, and LATAM product portfolio support. I also played a central role in the company's global ERP implementation, acting as the bridge between IT business analysts and commercial affiliates across Europe and Latin America.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section class="section" aria-labelledby="about-heading">
     <div class="container">
       <div class="about-content">
-
-        <div class="about-section">
-          <h2>Professional Background</h2>
-          <p>
-            My career has been built at the intersection of sales operations, channel management, enterprise systems, and international market development. I have operated across complex, multi region environments, managing distributor relationships, driving ERP implementations, supporting sales leadership, and building the operational infrastructure that allows global commercial strategies to execute with precision.
-          </p>
-          <p>
-            At Wacker Neuson, I served as Product Marketing Manager with responsibility for global product landing pages, multi language digital content, and LATAM product portfolio support. I also played a central role in the company's global ERP implementation, acting as the bridge between IT business analysts and commercial affiliates across Europe and Latin America.
-          </p>
-        </div>
 
         <div class="about-section">
           <h2>Core Differentiators</h2>
@@ -129,6 +145,57 @@ import { SITE } from "@utils/constants";
 </BaseLayout>
 
 <style>
+  /* ── Photo intro ── */
+  .about-intro-section {
+    padding-block: var(--space-16);
+    border-bottom: var(--border-width) solid var(--color-border);
+  }
+
+  .about-intro-grid {
+    display: grid;
+    grid-template-columns: 380px 1fr;
+    gap: var(--space-16);
+    align-items: start;
+  }
+
+  .about-photo-col {
+    position: sticky;
+    top: calc(var(--space-8) + 64px);
+  }
+
+  .about-photo {
+    width: 100%;
+    height: auto;
+    border-radius: var(--radius-lg);
+    border: 2px solid #c89b3c;
+    display: block;
+    box-shadow: 0 8px 32px rgb(0 0 0 / 0.3);
+  }
+
+  .about-intro-col {
+    padding-top: var(--space-4);
+  }
+
+  .about-intro-lead {
+    font-size: var(--text-base);
+    color: var(--color-text-muted);
+    line-height: var(--leading-relaxed);
+    margin-bottom: var(--space-5);
+  }
+
+  @media (max-width: 768px) {
+    .about-intro-grid {
+      grid-template-columns: 1fr;
+      gap: var(--space-8);
+    }
+
+    .about-photo-col {
+      position: static;
+      max-width: 280px;
+    }
+  }
+
+  /* ── Main content ── */
   .about-content {
     max-width: 52rem;
   }
