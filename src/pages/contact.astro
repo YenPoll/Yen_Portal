@@ -2,6 +2,7 @@
 import BaseLayout from "@layouts/BaseLayout.astro";
 import SocialLinks from "@components/SocialLinks.astro";
 import PageHeader from "@components/PageHeader.astro";
+import { SOCIAL_LINKS } from "@utils/constants";
 ---
 
 <BaseLayout
@@ -19,9 +20,20 @@ import PageHeader from "@components/PageHeader.astro";
       <div class="contact-info-section">
         <h2>Connect Directly</h2>
         <p>
-          The fastest way to reach me is by phone or LinkedIn:
+          The fastest way to reach me is by email or LinkedIn:
         </p>
         <SocialLinks />
+        <p class="contact-note">
+          Based in the United States. Available for roles across the Americas, EMEA and APAC.
+        </p>
+
+        <h2>Resume</h2>
+        <p>
+          I don't post my resume publicly. Email me and tell me what you're hiring for, and I'll send the version that speaks to that role.
+        </p>
+        <p>
+          <a href={SOCIAL_LINKS.resumeRequest} class="btn btn-primary">Request my resume</a>
+        </p>
 
       </div>
     </div>

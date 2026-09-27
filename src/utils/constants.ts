@@ -19,6 +19,9 @@ export const NAV_LINKS = [
 
 export const SOCIAL_LINKS = {
   linkedin: "https://www.linkedin.com/in/yennyfer-pollock",
-  phone: "tel:+14149491423",
-  phoneDisplay: "+1 (414) 949-1423",
+  email: "mailto:yennyfer.pollock@outlook.com",
+  emailDisplay: "yennyfer.pollock@outlook.com",
+  resumeRequest: "mailto:yennyfer.pollock@outlook.com?subject=Resume%20request&body=Hello%20Yennyfer%2C%0A%0AI%20would%20like%20to%20request%20your%20resume.%20The%20role%20I%20am%20hiring%20for%20is%3A%0A%0A",
 } as const;
+
+export const LOCATION = "United States" as const;
