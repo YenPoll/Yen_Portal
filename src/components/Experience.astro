@@ -1,0 +1,50 @@
+---
+import { COMPANY_LINKS, EDUCATION, EXPERIENCE } from "@data/content";
+
+function splitCompany(company: string) {
+  const [name = "", ...rest] = company.split(" · ");
+  return { name, location: rest.join(" · "), url: COMPANY_LINKS[name] };
+}
+---
+
+<section id="experience" class="section-sm" aria-labelledby="experience-heading">
+  <div class="container">
+    <h2 id="experience-heading">Experience</h2>
+    <ol class="timeline" role="list">
+      {
+        EXPERIENCE.map((role) => {
+          const c = splitCompany(role.company);
+          return (
+            <li class="timeline-item">
+              <span class="timeline-role">{role.role}</span>
+              <span class="timeline-company">
+                {" · "}
+                {c.url ? (
+                  <a href={c.url} target="_blank" rel="noopener noreferrer" aria-label={`${c.name} (opens in a new tab)`}>{c.name}</a>
+                ) : (
+                  c.name
+                )}
+                {c.location && ` · ${c.location}`}
+              </span>
+              {role.detail && <p class="timeline-detail">{role.detail}</p>}
+            </li>
+          );
+        })
+      }
+    </ol>
+    <p class="education">{EDUCATION}</p>
+  </div>
+</section>
+
+<style>
+  #experience-heading { margin-bottom: var(--space-8); }
+  .timeline { list-style: none; padding: 0; display: flex; flex-direction: column; gap: var(--space-6); }
+  .timeline-item { padding-bottom: var(--space-6); border-bottom: var(--border-width) solid var(--color-border); }
+  .timeline-item:last-child { border-bottom: none; padding-bottom: 0; }
+  .timeline-role { font-weight: var(--weight-semibold); }
+  .timeline-company { color: var(--color-text-muted); }
+  .timeline-company a { color: var(--color-text-muted); text-decoration-color: var(--color-border); }
+  .timeline-company a:hover { color: var(--color-primary); }
+  .timeline-detail { margin-top: var(--space-1); font-size: var(--text-sm); color: var(--color-text-muted); }
+  .education { margin-top: var(--space-8); padding-top: var(--space-6); border-top: var(--border-width) solid var(--color-border); font-size: var(--text-sm); color: var(--color-text-muted); }
+</style>

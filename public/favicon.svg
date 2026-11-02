@@ -1,4 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none">
-  <rect width="32" height="32" rx="6" fill="#2563eb"/>
-  <text x="50%" y="54%" dominant-baseline="middle" text-anchor="middle" font-family="system-ui, sans-serif" font-weight="700" font-size="18" fill="white">Y</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="Yennyfer Pollock">
+  <rect width="32" height="32" rx="6" fill="#0B1F3A"/>
+  <path d="M9 8 L15 8 L16 12.5 Z" fill="#FFFFFF"/>
+  <path d="M23 8 L17 8 L16 12.5 Z" fill="#FFFFFF"/>
+  <path d="M16 12.5 L21 17.5 L16 23 L11 17.5 Z" fill="#C89B3C"/>
 </svg>

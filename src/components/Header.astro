@@ -1,28 +1,13 @@
 ---
 import ThemeToggle from "@components/ThemeToggle.astro";
-import { NAV_LINKS, SITE } from "@utils/constants";
+import { NAV_LINKS, SITE } from "@data/content";
 
-const currentPath = Astro.url.pathname;
-
-function isActive(href: string): boolean {
-  // Exact match for home, startsWith for others
-  if (href === `${SITE.base}/`) {
-    return currentPath === `${SITE.base}/` || currentPath === SITE.base;
-  }
-  return currentPath.startsWith(href);
-}
 ---
 
-<header class="site-header" transition:name="header" transition:persist>
+<header class="site-header">
   <div class="container header-inner">
-    <a href={`${SITE.base}/`} class="site-logo" aria-label={`${SITE.title}, Home`}>
-      <span class="logo-mark" aria-hidden="true">
-        <svg width="26" height="26" viewBox="0 0 32 32">
-          <path d="M6 6.5 L13 6.5 L16 15 Z" fill="#0B1F3A"></path>
-          <path d="M26 6.5 L19 6.5 L16 15 Z" fill="#0B1F3A"></path>
-          <path d="M16 15 L22 21 L16 27 L10 21 Z" fill="#0B1F3A"></path>
-        </svg>
-      </span>
+    <a href="#top" class="site-logo" aria-label={`${SITE.title}, Home`}>
+      <img src={`${SITE.base}/logo.svg`} alt="" width="28" height="28" class="logo-mark" />
       <span class="logo-text">{SITE.title}</span>
     </a>
 
@@ -57,13 +42,7 @@ function isActive(href: string): boolean {
         {
           NAV_LINKS.map((link) => (
             <li>
-              <a
-                href={link.href}
-                class:list={["nav-link", { active: isActive(link.href) }]}
-                aria-current={isActive(link.href) ? "page" : undefined}
-              >
-                {link.label}
-              </a>
+              <a href={link.href} class="nav-link">{link.label}</a>
             </li>
           ))
         }
@@ -108,13 +87,6 @@ function isActive(href: string): boolean {
   }
 
   .logo-mark {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 2.5rem;
-    height: 2.5rem;
-    background-color: #c89b3c;
-    border-radius: var(--radius-sm);
     flex-shrink: 0;
   }
 
@@ -152,11 +124,6 @@ function isActive(href: string): boolean {
   .nav-link:hover {
     color: var(--color-text);
     background-color: var(--color-bg-alt);
-  }
-
-  .nav-link.active {
-    color: var(--color-primary);
-    font-weight: var(--weight-semibold);
   }
 
   /* Mobile toggle */
@@ -208,6 +175,11 @@ function isActive(href: string): boolean {
       display: none;
     }
   }
+:global(.dark) .site-logo img, :global(.dark) .footer-logo img {
+    background: #fff;
+    border-radius: var(--radius-sm);
+    padding: 2px;
+  }
 </style>
 
 <script is:inline>
@@ -221,6 +193,13 @@ function isActive(href: string): boolean {
         var expanded = toggle.getAttribute("aria-expanded") === "true";
         toggle.setAttribute("aria-expanded", String(!expanded));
         menu.classList.toggle("open");
+      });
+
+      menu.querySelectorAll("a").forEach(function (a) {
+        a.addEventListener("click", function () {
+          toggle.setAttribute("aria-expanded", "false");
+          menu.classList.remove("open");
+        });
       });
 
       // Close on Escape

@@ -9,14 +9,14 @@
 :root {
   /* Colors — Light Mode */
   --color-bg: #ffffff;
-  --color-bg-alt: #f5f5f5;
+  --color-bg-alt: #fafaf8;
   --color-text: #1a1a1a;
-  --color-text-muted: #6b7280;
-  --color-primary: #0f2a4a;
+  --color-text-muted: #5a5a5a;
+  --color-primary: #0b1f3a;
   --color-primary-hover: #163c64;
   --color-accent: #c89b3c;
   --color-accent-hover: #b8863b;
-  --color-border: #e5e7eb;
+  --color-border: #e4e4e0;
   --color-surface: #ffffff;
   --color-focus: #2563eb;
   --color-success: #059669;
@@ -33,7 +33,7 @@
   /* Fluid Type Scale */
   --text-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.8125rem);
   --text-sm: clamp(0.875rem, 0.8rem + 0.25vw, 0.9375rem);
-  --text-base: clamp(1rem, 0.95rem + 0.25vw, 1.0625rem);
+  --text-base: clamp(1.0625rem, 1rem + 0.25vw, 1.125rem);
   --text-lg: clamp(1.125rem, 1rem + 0.5vw, 1.25rem);
   --text-xl: clamp(1.25rem, 1.1rem + 0.75vw, 1.5rem);
   --text-2xl: clamp(1.5rem, 1.2rem + 1.5vw, 2rem);
@@ -42,7 +42,7 @@
 
   /* Line Heights */
   --leading-tight: 1.2;
-  --leading-normal: 1.6;
+  --leading-normal: 1.65;
   --leading-relaxed: 1.75;
 
   /* Font Weights */
@@ -66,8 +66,9 @@
   --space-24: 6rem; /* 96px */
 
   /* Layout */
-  --max-width: 72rem; /* 1152px */
-  --content-width: 42rem; /* 672px — optimal for prose */
+  --max-width: 68.75rem; /* 1100px */
+  --content-width: 70ch;
+  --section-gap: var(--space-24);
   --gutter: var(--space-6);
 
   /* Borders */
@@ -368,13 +369,33 @@ li + li {
   margin-bottom: var(--space-6);
 }
 
-/* Section spacing */
+/* Section spacing — 96px desktop / 64px mobile */
 .section {
-  padding-block: var(--space-16);
+  padding-block: var(--section-gap);
+  scroll-margin-top: 5rem;
 }
 
 .section-sm {
-  padding-block: var(--space-10);
+  padding-block: var(--space-16);
+  scroll-margin-top: 5rem;
+}
+
+@media (max-width: 640px) {
+  .section {
+    padding-block: var(--space-16);
+  }
+
+  .section-sm {
+    padding-block: var(--space-10);
+  }
+}
+
+.stat-number {
+  font-variant-numeric: tabular-nums;
+}
+
+[hidden] {
+  display: none !important;
 }
 
 /* Button base */

@@ -1,5 +1,5 @@
 ---
-import { NAV_LINKS, SITE, SOCIAL_LINKS } from "@utils/constants";
+import { CONTACT, NAV_LINKS, SITE } from "@data/content";
 
 const currentYear = new Date().getFullYear();
 ---
@@ -8,20 +8,11 @@ const currentYear = new Date().getFullYear();
   <div class="container footer-inner">
     <div class="footer-top">
       <div class="footer-brand">
-        <a href={`${SITE.base}/`} class="footer-logo" aria-label={`${SITE.title}, Home`}>
-          <span class="logo-mark" aria-hidden="true">
-            <svg width="22" height="22" viewBox="0 0 32 32">
-              <path d="M6 6.5 L13 6.5 L16 15 Z" fill="#0B1F3A"></path>
-              <path d="M26 6.5 L19 6.5 L16 15 Z" fill="#0B1F3A"></path>
-              <path d="M16 15 L22 21 L16 27 L10 21 Z" fill="#0B1F3A"></path>
-            </svg>
-          </span>
+        <a href="#top" class="footer-logo" aria-label={`${SITE.title}, Home`}>
+          <img src={`${SITE.base}/logo.svg`} alt="" width="24" height="24" />
           <span>{SITE.title}</span>
         </a>
-        <p class="footer-tagline">
-          Global Business Operations & Market Enablement: Latin America & Caribbean.<br />
-          United States.
-        </p>
+        <p class="footer-tagline">{SITE.role}<br />{CONTACT.location}</p>
       </div>
 
       <nav aria-label="Footer navigation" class="footer-nav">
@@ -44,7 +35,7 @@ const currentYear = new Date().getFullYear();
         <ul role="list" class="social-list">
           <li>
             <a
-              href={SOCIAL_LINKS.linkedin}
+              href={CONTACT.linkedin}
               class="footer-link"
               target="_blank"
               rel="noopener noreferrer"
@@ -53,7 +44,7 @@ const currentYear = new Date().getFullYear();
             </a>
           </li>
           <li>
-            <a href={SOCIAL_LINKS.email} class="footer-link">{SOCIAL_LINKS.emailDisplay}</a>
+            <a href={CONTACT.emailHref} class="footer-link">{CONTACT.email}</a>
           </li>
         </ul>
       </div>
@@ -94,17 +85,6 @@ const currentYear = new Date().getFullYear();
 
   .footer-logo:hover {
     color: var(--color-primary);
-  }
-
-  .logo-mark {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 2.25rem;
-    height: 2.25rem;
-    background-color: #c89b3c;
-    border-radius: var(--radius-sm);
-    flex-shrink: 0;
   }
 
   .footer-tagline {
@@ -158,5 +138,10 @@ const currentYear = new Date().getFullYear();
       grid-template-columns: 1fr;
       gap: var(--space-8);
     }
+  }
+:global(.dark) .site-logo img, :global(.dark) .footer-logo img {
+    background: #fff;
+    border-radius: var(--radius-sm);
+    padding: 2px;
   }
 </style>

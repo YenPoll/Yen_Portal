@@ -1,0 +1,19 @@
+---
+import BaseLayout from "@layouts/BaseLayout.astro";
+import { SITE } from "@data/content";
+---
+
+<BaseLayout title="Page Not Found" description="This page doesn't exist.">
+  <section class="section not-found">
+    <div class="container">
+      <h1>Page not found</h1>
+      <p>The page you're looking for doesn't exist.</p>
+      <a href={`${SITE.base}`} class="btn btn-primary">Back to home</a>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .not-found { text-align: center; }
+  .not-found p { color: var(--color-text-muted); margin-block: var(--space-4) var(--space-8); }
+</style>

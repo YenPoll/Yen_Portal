@@ -1,0 +1,36 @@
+---
+import { CAPABILITIES } from "@data/content";
+---
+
+<section id="what-i-do" class="section-sm what-section" aria-labelledby="what-i-do-heading">
+  <div class="container">
+    <h2 id="what-i-do-heading">What I Do</h2>
+    <div class="capability-grid">
+      {
+        CAPABILITIES.map((cap) => (
+          <div class="capability-card">
+            <h3>{cap.title}</h3>
+            <p class="capability-subtitle">{cap.subtitle}</p>
+            <ul class="capability-list">
+              {cap.items.map((item) => <li>{item}</li>)}
+            </ul>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<style>
+  .what-section { background-color: var(--color-bg-alt); }
+  #what-i-do-heading { margin-bottom: var(--space-8); }
+  .capability-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-6); }
+  .capability-card { padding: var(--space-6); background-color: var(--color-surface); border: var(--border-width) solid var(--color-border); border-radius: var(--radius-lg); }
+  .capability-card h3 { font-size: var(--text-lg); font-weight: var(--weight-semibold); margin-bottom: var(--space-2); }
+  .capability-subtitle { color: var(--color-text-muted); font-size: var(--text-sm); margin-bottom: var(--space-4); }
+  .capability-list { list-style: none; padding: 0; }
+  .capability-list li { position: relative; padding-left: var(--space-5); font-size: var(--text-sm); color: var(--color-text-muted); line-height: var(--leading-relaxed); }
+  .capability-list li + li { margin-top: var(--space-2); }
+  .capability-list li::before { content: "·"; position: absolute; left: var(--space-1); color: var(--color-accent); font-weight: var(--weight-bold); }
+  @media (max-width: 768px) { .capability-grid { grid-template-columns: 1fr; } }
+</style>
