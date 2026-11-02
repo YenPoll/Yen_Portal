@@ -210,6 +210,5 @@ export const CONTACT_SECTION = {
     "I'm looking for an in-house role where I can bring this operating discipline to one team — Sales Operations, Account Management, Inside Sales or Channel Operations, with a company that sells something real.",
     "If your revenue is leaking somewhere between the factory and the customer, that's the problem I know how to fix.",
   ],
-  resumeNote:
-    "I don't post my resume publicly. Email me and tell me what you're hiring for, and I'll send the version that speaks to that role.",
+  resumeNote: "Resume available on request.",
 } as const;
