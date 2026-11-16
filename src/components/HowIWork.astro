@@ -1,5 +1,5 @@
 ---
-import { AI_WORK, CERTIFICATIONS, TOOLS } from "@data/content";
+import { AI_WORK, CERTIFICATIONS, LANGUAGES, TOOLS } from "@data/content";
 ---
 
 <section id="how-i-work" class="section-sm how-section" aria-labelledby="how-i-work-heading">
@@ -9,6 +9,8 @@ import { AI_WORK, CERTIFICATIONS, TOOLS } from "@data/content";
       <div>
         <h3>Tools I work in</h3>
         <p class="muted">{TOOLS.join(" · ")}</p>
+        <h3 class="lang-h">Languages</h3>
+        <p class="muted">{LANGUAGES}</p>
       </div>
       <div>
         <h3>Working with AI</h3>
@@ -24,6 +26,7 @@ import { AI_WORK, CERTIFICATIONS, TOOLS } from "@data/content";
   #how-i-work-heading { margin-bottom: var(--space-8); }
   .how-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-10); }
   .how-grid h3 { font-size: var(--text-lg); margin-bottom: var(--space-3); }
+  .lang-h { margin-top: var(--space-6); }
   .muted { color: var(--color-text-muted); }
   .ai-p { margin-bottom: var(--space-3); }
   .certifications { margin-top: var(--space-8); padding-top: var(--space-6); border-top: var(--border-width) solid var(--color-border); font-size: var(--text-sm); color: var(--color-text-muted); }

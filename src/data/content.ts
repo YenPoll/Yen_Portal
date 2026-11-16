@@ -5,9 +5,9 @@ export const SHOW_PHOTO = true;
 
 export const SITE = {
   title: "Yennyfer Pollock",
-  role: "Sales Operations & Account Management",
+  role: "B2B Account Management · Latin America",
   description:
-    "Bilingual Sales Operations and Account Management professional for B2B manufacturers. $26M+ in new business across Latin America, the Caribbean, EMEA and APAC.",
+    "Bilingual B2B Account Manager focused on Latin America and the Caribbean. $26M+ in new business across Latin America, the Caribbean, EMEA and APAC.",
   author: "Yennyfer Pollock",
   url: "https://yenpoll.github.io",
   base: "/Yen_Portal",
@@ -33,26 +33,37 @@ export const CONTACT = {
 
 export const HERO = {
   name: "Yennyfer Pollock",
-  role: "Sales Operations & Account Management",
-  qualifier: "B2B Manufacturing · Bilingual (EN/ES) · U.S. & International Markets",
+  role: "B2B Account Management · Latin America",
+  qualifier: "B2B Sales · Latin America & the Caribbean · Bilingual (EN/ES)",
   valueLine: "Converting complexity into clarity.",
   bridge:
-    "I'm the bridge between the factory and the market — I turn fragmented sales operations into systems that close business and keep customers coming back.",
+    "I'm the bridge between headquarters and Latin American markets — I turn fragmented sales operations into systems that close business and keep customers coming back.",
   proof:
-    "$26M+ in new business generated for global manufacturers across Latin America, the Caribbean, EMEA and APAC.",
-  credibilityChips: ["United States", "Available for U.S. and remote roles"],
+    "$26M+ in new business generated across Latin America, the Caribbean, EMEA and APAC. Forecast error cut from 18% to 6% across four countries.",
+  credibilityChips: ["United States", "Open to remote roles and regular travel across Latin America"],
 } as const;
 
 export const ABOUT = {
   paragraphs: [
     "Revenue slows down when sales, operations, and channel partners pull in different directions. I've sat at every one of those tables.",
-    "I've spent my career inside B2B manufacturers — industrial equipment, commercial LED lighting — as the person the sales team, the factory, and the distributor network all come to. I've been the enabler, the analyst, the systems owner, and the closer. That cross-functional depth means I don't just bridge the gaps between those functions: I see them coming.",
-    "What I actually do is unglamorous and it works: I take scattered data, unclear pricing, slow quotes and partners with no front door, and I turn them into systems people trust and use. Then revenue moves.",
-    "I lead with questions, not pitches. I'm bilingual (EN/ES), based in the United States, and I'm looking for an in-house team to bring this operating discipline to.",
+    "I've spent my career inside global B2B companies — industrial equipment, commercial LED lighting — as the person the sales team, headquarters, and the distributor network all come to. I've been the enabler, the analyst, the systems owner, and the closer. That cross-functional depth means I don't just bridge the gaps between those functions: I see them coming.",
+    "My focus is Latin America and the Caribbean. Across my career I've managed 40+ distributor, agent and enterprise accounts in Central America, South America and the Caribbean — typically two to three partners per country. I work with distributors, agents and enterprise accounts in Spanish and English, and I turn scattered data, unclear pricing, slow quotes and partners with no front door into systems people trust and use. Then revenue moves.",
+    "I lead with questions, not pitches. I'm bilingual (EN/ES), based in the United States, and I'm looking for an in-house team that wants to grow its Latin American business.",
   ],
 } as const;
 
 export const CAPABILITIES = [
+  {
+    title: "Account Management & Retention",
+    subtitle: "One point of contact, from first question to renewal.",
+    items: [
+      "End-to-end ownership of the customer relationship",
+      "Escalation handling, credit disputes, RMA resolution",
+      "Account growth: upsell, renewals and win-back",
+      "Advocating for the customer inside the business",
+      "Business reviews, product demos and tailored presentations",
+    ],
+  },
   {
     title: "Sales Operations & CRM",
     subtitle: "The system of record that leadership actually trusts.",
@@ -64,16 +75,6 @@ export const CAPABILITIES = [
     ],
   },
   {
-    title: "Account Management & Retention",
-    subtitle: "One point of contact, from first question to renewal.",
-    items: [
-      "End-to-end ownership of the customer relationship",
-      "Escalation handling, credit disputes, RMA resolution",
-      "Account growth: upsell, renewals and win-back",
-      "Advocating for the customer inside the business",
-    ],
-  },
-  {
     title: "Channel & Distributor Growth",
     subtitle: "Partners sell more when someone makes it easy to sell.",
     items: [
@@ -81,6 +82,7 @@ export const CAPABILITIES = [
       "Bilingual enablement, training and sales collateral",
       "OEM program coordination & dropshipment",
       "Third-party logistics (3PL) coordination",
+      "Partner incentive & rebate program design",
     ],
   },
   {
@@ -96,14 +98,14 @@ export const CAPABILITIES = [
 ] as const;
 
 export const RESULTS = [
-  { value: "$26M+", label: "in new business generated", attribution: "Cree Lighting & Wacker Neuson · LATAM, Caribbean, EMEA, APAC" },
-  { value: "18% → 6%", label: "forecast error, across four countries", attribution: "Wacker Neuson · SAP ERP rollout in Mexico, Chile, Brazil, Peru" },
-  { value: "$1.8M", label: "recovered in aged industrial inventory", attribution: "Wacker Neuson · rebate & incentive program design" },
-  { value: "50%", label: "faster quote response times", attribution: "Cree Lighting · process standardization & AI-enhanced workflows" },
-  { value: "60%", label: "fewer order errors", attribution: "Cree Lighting · process standardization" },
-  { value: "500+", label: "SKUs consolidated into one product platform", attribution: "Wacker Neuson · cross-functional PIM implementation" },
-  { value: "120+", label: "users onboarded onto SAP ERP", attribution: "Wacker Neuson · bilingual adoption across 4 countries" },
-  { value: "40+", label: "channel partners enabled", attribution: "Cree Lighting · bilingual training & certification collateral" },
+  { value: "$26M+", label: "in new business generated", attribution: "Latin America, Caribbean, EMEA and APAC" },
+  { value: "18% → 6%", label: "forecast error, across four countries", attribution: "SAP ERP rollout in Mexico, Chile, Brazil and Peru" },
+  { value: "$1.8M", label: "recovered in aged industrial inventory", attribution: "Rebate & incentive program design" },
+  { value: "50%", label: "faster quote response times", attribution: "Process standardization & AI-enhanced workflows" },
+  { value: "60%", label: "fewer order errors", attribution: "Process standardization" },
+  { value: "500+", label: "SKUs consolidated into one product platform", attribution: "Cross-functional PIM implementation" },
+  { value: "120+", label: "users onboarded onto SAP ERP", attribution: "Bilingual adoption across 4 countries" },
+  { value: "40+", label: "channel partners enabled", attribution: "Bilingual training & certification collateral" },
 ] as const;
 
 export const RESULTS_VISIBLE_COUNT = 5;
@@ -153,12 +155,12 @@ export const EXPERIENCE = [
   {
     role: "Bilingual Sales Operations & Support Lead | Account Management",
     company: "Cree Lighting USA LLC · Milwaukee, WI",
-    detail: "Commercial LED lighting manufacturer · ~430 employees · $325M revenue",
+    detail: "Commercial LED lighting · ~430 employees · $325M revenue",
   },
   {
     role: "Product Marketing Manager",
     company: "Wacker Neuson SE · Milwaukee, WI",
-    detail: "Global industrial equipment manufacturer · ~5,800 employees · ~$1.7B revenue",
+    detail: "Global industrial equipment · ~5,800 employees · ~$1.7B revenue",
   },
   {
     role: "International Sales Analyst II, Market Development",
@@ -172,6 +174,8 @@ export const EXPERIENCE = [
   },
 ] as const;
 
+export const LANGUAGES = "English · Spanish · Portuguese (elementary)";
+
 export const EDUCATION =
   "MBA, Concordia University Wisconsin (in progress) · BA, Management Sciences & Marketing, UNITEC — Valencia, Venezuela";
 
@@ -184,12 +188,13 @@ export const TOOLS = [
   "Contentserv PIM",
   "Oracle",
   "Advanced Excel",
+  "PowerPoint",
   "Google Workspace",
 ] as const;
 
 export const AI_WORK = {
   paragraphs: [
-    "I use AI the way I use any other system: to remove friction and give people back their time. At Cree Lighting, AI-enhanced workflows were part of how quote response times came down 50%. I've since completed AI training through Google Cloud, MIT OpenCourseWare, AWS, the University of Helsinki and Anthropic Academy.",
+    "I use AI the way I use any other system: to remove friction and give people back their time. In my last role, AI-enhanced workflows were part of how quote response times came down 50%. I've since completed AI training through Google Cloud, MIT OpenCourseWare, AWS, the University of Helsinki and Anthropic Academy.",
     "This site is one of the results — I designed and built it myself with Astro, TypeScript and Claude Code.",
   ],
 } as const;
@@ -207,8 +212,8 @@ export const CERTIFICATIONS = [
 export const CONTACT_SECTION = {
   heading: "Let's talk",
   paragraphs: [
-    "I'm looking for an in-house role where I can bring this operating discipline to one team — Sales Operations, Account Management, Inside Sales or Channel Operations, with a company that sells something real.",
-    "If your revenue is leaking somewhere between the factory and the customer, that's the problem I know how to fix.",
+    "I'm looking for an in-house role where I can grow B2B accounts in Latin America and the Caribbean — Account Management, Inside Sales, Channel or Sales Operations, with a company that sells something real.",
+    "If your revenue is leaking somewhere between headquarters and your Latin American customers, that's the problem I know how to fix.",
   ],
   resumeNote: "Resume available on request.",
 } as const;
